@@ -31,7 +31,7 @@ body {
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* Header */
+/* ===== Header ===== */
 .header {
     background: var(--white);
     box-shadow: 0 2px 20px rgba(26,58,107,0.1);
@@ -40,25 +40,56 @@ body {
 }
 .header .container {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 20px; flex-wrap: wrap; gap: 15px;
+    padding: 18px 20px; flex-wrap: wrap; gap: 15px;
 }
-.logo { display: flex; align-items: center; gap: 12px; }
+
+/* ===== Logo Area ===== */
+.logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 14px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.logo:hover { transform: scale(1.03); }
+
 .logo-img {
-    width: 60px; height: 60px;
-    border-radius: 50%;
+    width: 70px; 
+    height: 70px;
+    border-radius: 16px;
     object-fit: contain;
     border: 2px solid var(--navy);
-    box-shadow: 0 4px 12px rgba(26,58,107,0.2);
+    box-shadow: 0 4px 15px rgba(108,76,224,0.25);
     background: var(--white);
-    padding: 5px;
+    padding: 8px;
+    transition: all 0.3s;
 }
-.logo h1 {
-    font-size: 1.9rem; font-weight: 900;
+.logo:hover .logo-img {
+    border-color: var(--purple);
+    box-shadow: 0 6px 22px rgba(108,76,224,0.45);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+.logo-text h1 {
+    font-size: 1.9rem; 
+    font-weight: 900;
     color: var(--navy);
     letter-spacing: -1px;
 }
-.logo h1 span { color: var(--purple); }
+.logo-text h1 span { color: var(--purple); }
+.logo-text small {
+    font-size: 0.75rem;
+    color: var(--gray);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
 
+/* ===== Nav ===== */
 .nav { display: flex; gap: 25px; align-items: center; flex-wrap: wrap; }
 .nav a {
     text-decoration: none; color: var(--navy);
@@ -80,7 +111,7 @@ body {
 .cta-btn::after { display: none; }
 .cta-btn:hover { background: var(--purple) !important; color: var(--white) !important; }
 
-/* Hero Slider */
+/* ===== Hero Slider ===== */
 .hero {
     position: relative;
     height: 600px;
@@ -179,7 +210,7 @@ body {
     border-color: var(--white);
 }
 
-/* Section Title */
+/* ===== Section Title ===== */
 .section-title {
     font-size: 2.5rem; font-weight: 900;
     text-align: center; color: var(--navy);
@@ -193,7 +224,7 @@ body {
     letter-spacing: 8px;
 }
 
-/* Services */
+/* ===== Services ===== */
 .services { padding: 80px 0; background: var(--bg-light); }
 .services-grid {
     display: grid;
@@ -240,7 +271,7 @@ body {
     line-height: 1.7;
 }
 
-/* About Slider */
+/* ===== About Slider ===== */
 .about {
     padding: 80px 0;
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
@@ -332,7 +363,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Partnership */
+/* ===== Partnership ===== */
 .partnership {
     padding: 80px 0;
     background: var(--bg-light);
@@ -375,7 +406,7 @@ body {
     color: var(--gray);
 }
 
-/* Goals */
+/* ===== Goals ===== */
 .goals { padding: 80px 0; background: var(--bg-light); }
 .goals-grid {
     display: grid;
@@ -416,7 +447,7 @@ body {
     line-height: 1.7;
 }
 
-/* Contact */
+/* ===== Contact ===== */
 .contact {
     padding: 80px 0;
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
@@ -475,7 +506,7 @@ body {
     unicode-bidi: embed;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 .footer {
     background: var(--navy-dark); color: var(--white);
     text-align: center; padding: 30px 0;
@@ -484,12 +515,13 @@ body {
 .footer p { opacity: 0.85; }
 .footer span { color: var(--purple-light); font-weight: 900; }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
     .header .container { justify-content: center; }
     .nav { gap: 15px; font-size: 0.9rem; }
-    .logo h1 { font-size: 1.5rem; }
-    .logo-img { width: 50px; height: 50px; }
+    .logo-img { width: 55px; height: 55px; }
+    .logo-text h1 { font-size: 1.4rem; }
+    .logo-text small { font-size: 0.65rem; }
     .hero { height: 500px; }
     .slide-content h2 { font-size: 2rem; }
     .slide-content p { font-size: 1rem; }
@@ -508,11 +540,16 @@ body {
 </head>
 <body>
 
+<!-- ===== Header ===== -->
 <header class="header">
     <div class="container">
+        <!-- مكان اللوجو المخصص -->
         <div class="logo">
-            <img src="logo.png" alt="Skill Hub" class="logo-img">
-            <h1>Skill <span>Hub</span></h1>
+            <img src="IMG-20260930-WA0032.jpg" alt="Skill Hub Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>Skill <span>Hub</span></h1>
+                <small>Learn. Grow. Achieve.</small>
+            </div>
         </div>
         <nav class="nav">
             <a href="#home">الرئيسية</a>
@@ -525,6 +562,7 @@ body {
     </div>
 </header>
 
+<!-- ===== Hero Slider ===== -->
 <section class="hero" id="home">
     <div class="slide slide-1 active">
         <div class="slide-content">
@@ -558,6 +596,7 @@ body {
     </div>
 </section>
 
+<!-- ===== Services ===== -->
 <section class="services" id="services">
     <div class="container">
         <h2 class="section-title">كورساتنا وتدريباتنا</h2>
@@ -596,6 +635,7 @@ body {
     </div>
 </section>
 
+<!-- ===== About Slider ===== -->
 <section class="about" id="about">
     <div class="container">
         <h2 class="section-title">من نحن</h2>
@@ -630,6 +670,7 @@ body {
     </div>
 </section>
 
+<!-- ===== Goals ===== -->
 <section class="goals" id="goals">
     <div class="container">
         <h2 class="section-title">أهدافنا</h2>
@@ -663,6 +704,7 @@ body {
     </div>
 </section>
 
+<!-- ===== Partnership ===== -->
 <section class="partnership" id="partnership">
     <div class="container">
         <h2 class="section-title">شراكتنا</h2>
@@ -674,6 +716,7 @@ body {
     </div>
 </section>
 
+<!-- ===== Contact ===== -->
 <section class="contact" id="contact">
     <div class="container">
         <h2 class="section-title">تواصل معنا</h2>
@@ -697,6 +740,7 @@ body {
     </div>
 </section>
 
+<!-- ===== Footer ===== -->
 <footer class="footer">
     <div class="container">
         <p>© 2025 <span>Skill Hub</span> - جميع الحقوق محفوظة 🎓</p>
@@ -704,7 +748,7 @@ body {
 </footer>
 
 <script>
-// Hero Slider
+// ===== Hero Slider =====
 const slides = document.querySelectorAll('.hero .slide');
 const dots = document.querySelectorAll('.dot');
 let currentSlide = 0;
@@ -731,7 +775,7 @@ function startInterval() { slideInterval = setInterval(nextSlide, 5000); }
 function resetInterval() { clearInterval(slideInterval); startInterval(); }
 startInterval();
 
-// About Slider
+// ===== About Slider =====
 const aboutSlides = document.querySelectorAll('.about-slide');
 const aboutBtns = document.querySelectorAll('.about-nav-btn');
 
@@ -753,7 +797,7 @@ setInterval(() => {
     aboutBtns[aboutCurrent].classList.add('active');
 }, 7000);
 
-// Smooth Scroll
+// ===== Smooth Scroll =====
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.onclick = (e) => {
         e.preventDefault();
