@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Hub | منصة تعليمية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --navy: #1a3a6b;
+    --navy-dark: #0f2547;
+    --navy-light: #2c5aa0;
+    --purple: #6c4ce0;
+    --purple-dark: #5236b8;
+    --purple-light: #8b6ef5;
+    --white: #ffffff;
+    --bg-light: #f7f8fc;
+    --bg-card: #ffffff;
+    --gray: #7a8aa0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--bg-light);
+    color: var(--navy);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.header {
+    background: var(--white);
+    box-shadow: 0 2px 20px rgba(26,58,107,0.1);
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 3px solid var(--navy);
+}
+.header .container {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 20px; flex-wrap: wrap; gap: 15px;
+}
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-img {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 2px solid var(--navy);
+    box-shadow: 0 4px 12px rgba(26,58,107,0.2);
+    background: var(--white);
+    padding: 5px;
+}
+.logo h1 {
+    font-size: 1.9rem; font-weight: 900;
+    color: var(--navy);
+    letter-spacing: -1px;
+}
+.logo h1 span { color: var(--purple); }
+
+.nav { display: flex; gap: 25px; align-items: center; flex-wrap: wrap; }
+.nav a {
+    text-decoration: none; color: var(--navy);
+    font-weight: 700; transition: color 0.3s;
+    position: relative;
+}
+.nav a:hover { color: var(--purple); }
+.nav a::after {
+    content: ''; position: absolute; bottom: -5px; right: 0;
+    width: 0; height: 3px; background: var(--purple);
+    transition: width 0.3s; border-radius: 3px;
+}
+.nav a:hover::after { width: 100%; }
+.cta-btn {
+    background: var(--navy) !important; color: var(--white) !important;
+    padding: 10px 22px; border-radius: 30px;
+    cursor: pointer; transition: all 0.3s;
+}
+.cta-btn::after { display: none; }
+.cta-btn:hover { background: var(--purple) !important; color: var(--white) !important; }
+
+/* Hero Slider */
+.hero {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    background: var(--navy-dark);
+}
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slide.active { opacity: 1; }
+.slide-content {
+    text-align: center;
+    color: var(--white);
+    max-width: 800px;
+    padding: 0 20px;
+    transform: translateY(20px);
+    transition: transform 1s ease;
+}
+.slide.active .slide-content { transform: translateY(0); }
+.slide-content h2 {
+    font-size: 3rem; font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+.slide-content h2 span { color: var(--purple-light); }
+.slide-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    color: var(--white);
+    padding: 16px 45px; border-radius: 50px;
+    text-decoration: none; font-weight: 800;
+    font-size: 1.1rem; border: none; cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 8px 20px rgba(108,76,224,0.4);
+    font-family: inherit;
+}
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(26,58,107,0.5);
+}
+.slide-1 { background: linear-gradient(135deg, #0f2547 0%, #1a3a6b 50%, #2c5aa0 100%); }
+.slide-2 { background: linear-gradient(135deg, #1a3a6b 0%, #6c4ce0 100%); }
+.slide-3 { background: linear-gradient(135deg, #0f2547 0%, #5236b8 100%); }
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.4);
+    width: 55px; height: 55px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+    display: flex; align-items: center; justify-content: center;
+}
+.slider-btn:hover { background: var(--purple); border-color: var(--purple); }
+.slider-btn.prev { right: 25px; }
+.slider-btn.next { left: 25px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex; gap: 12px;
+    z-index: 10;
+}
+.dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+.dot.active {
+    background: var(--purple-light);
+    transform: scale(1.3);
+    border-color: var(--white);
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem; font-weight: 900;
+    text-align: center; color: var(--navy);
+    margin-bottom: 3rem; position: relative;
+}
+.section-title::after {
+    content: '◆ ◆ ◆';
+    display: block; font-size: 1rem;
+    color: var(--purple);
+    margin-top: 0.7rem;
+    letter-spacing: 8px;
+}
+
+/* Services */
+.services { padding: 80px 0; background: var(--bg-light); }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+.service-card {
+    background: var(--bg-card);
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 8px 25px rgba(26,58,107,0.12);
+    transition: all 0.4s ease;
+    position: relative; cursor: pointer;
+    border: 2px solid transparent;
+    padding: 30px 25px;
+    text-align: center;
+}
+.service-card::before {
+    content: ''; position: absolute; inset: 8px;
+    border: 2px dashed rgba(26,58,107,0.15);
+    border-radius: 14px;
+    pointer-events: none; z-index: 0;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(108,76,224,0.25);
+    border-color: var(--purple);
+}
+.service-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+    position: relative; z-index: 1;
+    transition: transform 0.4s;
+}
+.service-card:hover .service-icon { transform: scale(1.15) rotate(-5deg); }
+.service-card h3 {
+    font-size: 1.3rem; font-weight: 800;
+    color: var(--navy); margin-bottom: 10px;
+    position: relative; z-index: 1;
+}
+.service-card p {
+    color: var(--gray); font-size: 0.95rem;
+    position: relative; z-index: 1;
+    line-height: 1.7;
+}
+
+/* About Slider */
+.about {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+.about::before {
+    content: '📚'; position: absolute;
+    font-size: 18rem; opacity: 0.04;
+    top: 20px; left: 20px;
+}
+.about::after {
+    content: '🎓'; position: absolute;
+    font-size: 12rem; opacity: 0.04;
+    bottom: -30px; right: 30px;
+}
+.about .section-title { color: var(--white); }
+.about .section-title::after { color: var(--purple-light); }
+
+.about-slider {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 380px;
+    z-index: 2;
+}
+.about-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+.about-slide.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+.about-slide .icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+}
+.about-slide h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--purple-light);
+    margin-bottom: 20px;
+}
+.about-slide p {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--bg-light);
+    opacity: 0.95;
+}
+
+.about-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 5;
+    flex-wrap: wrap;
+}
+.about-nav-btn {
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.3);
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+.about-nav-btn:hover,
+.about-nav-btn.active {
+    background: var(--purple);
+    border-color: var(--purple);
+    transform: translateY(-2px);
+}
+
+/* Partnership */
+.partnership {
+    padding: 80px 0;
+    background: var(--bg-light);
+}
+.partnership-box {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 25px;
+    padding: 50px 40px;
+    box-shadow: 0 15px 50px rgba(26,58,107,0.15);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    text-align: center;
+}
+.partnership-box::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, var(--navy), var(--purple));
+    z-index: -1;
+}
+.partnership-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+}
+.partnership-box h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+.partnership-box h3 span { color: var(--purple); }
+.partnership-box p {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--gray);
+}
+
+/* Goals */
+.goals { padding: 80px 0; background: var(--bg-light); }
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+.goal-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 30px 25px;
+    box-shadow: 0 6px 20px rgba(26,58,107,0.1);
+    transition: all 0.3s;
+    border-right: 5px solid var(--purple);
+    position: relative;
+}
+.goal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(108,76,224,0.2);
+    border-right-color: var(--navy);
+}
+.goal-num {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--purple);
+    opacity: 0.4;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+.goal-card h4 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+.goal-card p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Contact */
+.contact {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+.contact::before {
+    content: '📞'; position: absolute;
+    font-size: 15rem; opacity: 0.04;
+    top: 30px; left: 30px;
+}
+.contact .section-title { color: var(--white); }
+.contact .section-title::after { color: var(--purple-light); }
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.contact-card {
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+.contact-card:hover {
+    background: var(--purple);
+    border-color: var(--purple-light);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(108,76,224,0.4);
+}
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+}
+.contact-card h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.contact-card p {
+    font-size: 1rem;
+    opacity: 0.9;
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+/* Footer */
+.footer {
+    background: var(--navy-dark); color: var(--white);
+    text-align: center; padding: 30px 0;
+    border-top: 4px solid var(--purple);
+}
+.footer p { opacity: 0.85; }
+.footer span { color: var(--purple-light); font-weight: 900; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header .container { justify-content: center; }
+    .nav { gap: 15px; font-size: 0.9rem; }
+    .logo h1 { font-size: 1.5rem; }
+    .logo-img { width: 50px; height: 50px; }
+    .hero { height: 500px; }
+    .slide-content h2 { font-size: 2rem; }
+    .slide-content p { font-size: 1rem; }
+    .slider-btn { width: 45px; height: 45px; font-size: 1.2rem; }
+    .slider-btn.prev { right: 10px; }
+    .slider-btn.next { left: 10px; }
+    .section-title { font-size: 1.8rem; }
+    .about-slide h3 { font-size: 1.5rem; }
+    .about-slide p { font-size: 1rem; }
+    .about-nav-btn { padding: 8px 18px; font-size: 0.85rem; }
+    .partnership-box { padding: 35px 25px; }
+    .partnership-box h3 { font-size: 1.5rem; }
+    .services-grid, .goals-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="Skill Hub" class="logo-img">
+            <h1>Skill <span>Hub</span></h1>
+        </div>
+        <nav class="nav">
+            <a href="#home">الرئيسية</a>
+            <a href="#services">الكورسات</a>
+            <a href="#about">من نحن</a>
+            <a href="#partnership">الشراكة</a>
+            <a href="#contact">تواصل</a>
+            <a href="#contact" class="cta-btn">ابدأ الآن 🚀</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="slide slide-1 active">
+        <div class="slide-content">
+            <h2>طوّر مهاراتك مع <span>Skill Hub</span></h2>
+            <p>منصة تعليمية متخصصة في تقديم الكورسات والتدريبات العملية في مختلف المجالات</p>
+            <a href="#services" class="btn-primary">اكتشف الكورسات 🎓</a>
+        </div>
+    </div>
+    <div class="slide slide-2">
+        <div class="slide-content">
+            <h2>تعلّم. <span>انمُ.</span> حقّق.</h2>
+            <p>حوّل المعرفة إلى مهارات حقيقية قابلة للتطبيق في الدراسة والحياة العملية وسوق العمل</p>
+            <a href="#about" class="btn-primary">اعرف أكثر 📖</a>
+        </div>
+    </div>
+    <div class="slide slide-3">
+        <div class="slide-content">
+            <h2>شراكة مع <span>جامعة عين شمس</span></h2>
+            <p>محتوى تعليمي متخصص يدعم مسيرتك الأكاديمية والمهنية</p>
+            <a href="#partnership" class="btn-primary">تفاصيل الشراكة 🤝</a>
+        </div>
+    </div>
+
+    <button class="slider-btn prev" id="prevSlide">‹</button>
+    <button class="slider-btn next" id="nextSlide">›</button>
+
+    <div class="slider-dots" id="sliderDots">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <div class="container">
+        <h2 class="section-title">كورساتنا وتدريباتنا</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">💻</span>
+                <h3>البرمجة والتطوير</h3>
+                <p>كورسات عملية في تطوير الويب والتطبيقات بأحدث التقنيات</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🎨</span>
+                <h3>التصميم الجرافيكي</h3>
+                <p>تعلّم أساسيات ومتقدمات التصميم والهوية البصرية</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">📊</span>
+                <h3>إدارة الأعمال</h3>
+                <p>مهارات إدارية وريادة أعمال لسوق العمل الحديث</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🗣️</span>
+                <h3>المهارات الشخصية</h3>
+                <p>تطوير مهارات التواصل والقيادة والعمل الجماعي</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">📈</span>
+                <h3>التسويق الرقمي</h3>
+                <p>استراتيجيات التسويق عبر المنصات الرقمية</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🌐</span>
+                <h3>اللغات</h3>
+                <p>كورسات لغات لتعزيز فرصك الأكاديمية والمهنية</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="container">
+        <h2 class="section-title">من نحن</h2>
+        <div class="about-slider" id="aboutSlider">
+            <div class="about-slide active">
+                <span class="icon">🎯</span>
+                <h3>من نحن</h3>
+                <p>Skill Hub منصة تعليمية متخصصة في تقديم الكورسات والتدريبات العملية للطلاب في مختلف المجالات، بهدف مساعدتهم على اكتساب مهارات جديدة وتطوير قدراتهم بما يتناسب مع احتياجات الدراسة وسوق العمل.</p>
+            </div>
+            <div class="about-slide">
+                <span class="icon">📅</span>
+                <h3>تاريخ الإنشاء</h3>
+                <p>تأسست Skill Hub في عام ٢٠١٩ انطلاقًا من فكرة بسيطة: أن كل شخص لديه القدرة على التطور لكنه يحتاج إلى المكان المناسب والفرصة المناسبة لاكتساب المهارات والتطوير من ذاته.</p>
+            </div>
+            <div class="about-slide">
+                <span class="icon">🔭</span>
+                <h3>الرؤية</h3>
+                <p>أن نكون منصة تعليمية رائدة تمكّن كل شخص يسعى إلى تطوير نفسه من اكتساب المهارات والمعرفة التي تساعده على بناء مستقبل أفضل وتحقيق طموحاته.</p>
+            </div>
+            <div class="about-slide">
+                <span class="icon">✉️</span>
+                <h3>الرسالة</h3>
+                <p>تقديم تعليم عملي ومتاح للجميع، يساعد الأفراد على تطوير مهاراتهم، واكتشاف قدراتهم، وتحويل المعرفة إلى مهارات حقيقية قابلة للتطبيق في الدراسة والحياة العملية وسوق العمل.</p>
+            </div>
+        </div>
+        <div class="about-nav" id="aboutNav">
+            <button class="about-nav-btn active" data-about="0">من نحن</button>
+            <button class="about-nav-btn" data-about="1">التأسيس</button>
+            <button class="about-nav-btn" data-about="2">الرؤية</button>
+            <button class="about-nav-btn" data-about="3">الرسالة</button>
+        </div>
+    </div>
+</section>
+
+<section class="goals" id="goals">
+    <div class="container">
+        <h2 class="section-title">أهدافنا</h2>
+        <div class="goals-grid">
+            <div class="goal-card">
+                <div class="goal-num">01</div>
+                <h4>تطوير المهارات</h4>
+                <p>تقديم كورسات وتدريبات تساعد المتعلمين على اكتساب المهارات العملية والشخصية التي يحتاجونها في الدراسة وسوق العمل.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-num">02</div>
+                <h4>تحويل المعرفة إلى تطبيق</h4>
+                <p>ربط التعليم النظري بالتطبيق العملي من خلال المشاريع والأنشطة والتدريبات العملية.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-num">03</div>
+                <h4>دعم التطور الشخصي والمهني</h4>
+                <p>مساعدة كل متعلم على اكتشاف قدراته وتطوير مهاراته بما يتناسب مع اهتماماته وطموحاته المهنية.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-num">04</div>
+                <h4>توفير تعليم مرن ومتاح</h4>
+                <p>إتاحة محتوى تعليمي متنوع وبطريقة بسيطة ومرنة تناسب احتياجات مختلف المتعلمين.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-num">05</div>
+                <h4>بناء مجتمع تعليمي</h4>
+                <p>خلق بيئة تجمع المتعلمين بالمدربين والخبراء لتبادل المعرفة والخبرات وبناء علاقات مهنية.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="partnership" id="partnership">
+    <div class="container">
+        <h2 class="section-title">شراكتنا</h2>
+        <div class="partnership-box">
+            <span class="partnership-icon">🤝</span>
+            <h3>شراكة مع <span>جامعة عين شمس</span></h3>
+            <p>نفخر في Skill Hub بشراكتنا مع جامعة عين شمس لتقديم مجموعة من الكورسات والتدريبات التعليمية عبر منصتنا، بهدف إتاحة محتوى تعليمي متخصص يساعد المتعلمين على تطوير مهاراتهم واكتساب معارف عملية تدعم مسيرتهم الأكاديمية والمهنية.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">تواصل معنا</h2>
+        <div class="contact-grid">
+            <a href="tel:+201234567890" class="contact-card">
+                <span class="contact-icon">📞</span>
+                <h3>الخط الساخن</h3>
+                <p>+20 123 456 7890</p>
+            </a>
+            <a href="https://wa.me/201234567890" target="_blank" class="contact-card">
+                <span class="contact-icon">💬</span>
+                <h3>واتساب</h3>
+                <p>+20 123 456 7890</p>
+            </a>
+            <a href="mailto:info@skillhub.com" class="contact-card">
+                <span class="contact-icon">📧</span>
+                <h3>الإيميل</h3>
+                <p>info@skillhub.com</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 <span>Skill Hub</span> - جميع الحقوق محفوظة 🎓</p>
+    </div>
+</footer>
+
+<script>
+// Hero Slider
+const slides = document.querySelectorAll('.hero .slide');
+const dots = document.querySelectorAll('.dot');
+let currentSlide = 0;
+let slideInterval;
+
+function goToSlide(index) {
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentSlide = index;
+}
+
+function nextSlide() { goToSlide((currentSlide + 1) % slides.length); }
+function prevSlide() { goToSlide((currentSlide - 1 + slides.length) % slides.length); }
+
+document.getElementById('nextSlide').onclick = () => { nextSlide(); resetInterval(); };
+document.getElementById('prevSlide').onclick = () => { prevSlide(); resetInterval(); };
+dots.forEach(dot => {
+    dot.onclick = () => { goToSlide(+dot.dataset.slide); resetInterval(); };
+});
+
+function startInterval() { slideInterval = setInterval(nextSlide, 5000); }
+function resetInterval() { clearInterval(slideInterval); startInterval(); }
+startInterval();
+
+// About Slider
+const aboutSlides = document.querySelectorAll('.about-slide');
+const aboutBtns = document.querySelectorAll('.about-nav-btn');
+
+aboutBtns.forEach(btn => {
+    btn.onclick = () => {
+        aboutSlides.forEach(s => s.classList.remove('active'));
+        aboutBtns.forEach(b => b.classList.remove('active'));
+        aboutSlides[+btn.dataset.about].classList.add('active');
+        btn.classList.add('active');
+    };
+});
+
+let aboutCurrent = 0;
+setInterval(() => {
+    aboutCurrent = (aboutCurrent + 1) % aboutSlides.length;
+    aboutSlides.forEach(s => s.classList.remove('active'));
+    aboutBtns.forEach(b => b.classList.remove('active'));
+    aboutSlides[aboutCurrent].classList.add('active');
+    aboutBtns[aboutCurrent].classList.add('active');
+}, 7000);
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.onclick = (e) => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+});
+</script>
+</body>
+</html>
