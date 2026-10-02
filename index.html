@@ -43,7 +43,6 @@ body {
     padding: 18px 20px; flex-wrap: wrap; gap: 15px;
 }
 
-/* ===== Logo Area ===== */
 .logo { 
     display: flex; 
     align-items: center; 
@@ -89,7 +88,6 @@ body {
     margin-top: 2px;
 }
 
-/* ===== Nav ===== */
 .nav { display: flex; gap: 25px; align-items: center; flex-wrap: wrap; }
 .nav a {
     text-decoration: none; color: var(--navy);
@@ -210,7 +208,6 @@ body {
     border-color: var(--white);
 }
 
-/* ===== Section Title ===== */
 .section-title {
     font-size: 2.5rem; font-weight: 900;
     text-align: center; color: var(--navy);
@@ -388,11 +385,53 @@ body {
     background: linear-gradient(135deg, var(--navy), var(--purple));
     z-index: -1;
 }
-.partnership-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    display: block;
+
+/* ===== Partner Logos ===== */
+.partners-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
 }
+.partner-logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.partner-logo {
+    width: 110px;
+    height: 110px;
+    border-radius: 20px;
+    object-fit: contain;
+    background: var(--white);
+    padding: 10px;
+    border: 2px solid var(--navy);
+    box-shadow: 0 6px 20px rgba(108,76,224,0.2);
+    transition: all 0.3s;
+}
+.partner-logo:hover {
+    transform: translateY(-5px) scale(1.05);
+    border-color: var(--purple);
+    box-shadow: 0 10px 30px rgba(108,76,224,0.4);
+}
+.partner-logo-item span {
+    font-weight: 800;
+    color: var(--navy);
+    font-size: 0.95rem;
+}
+.partners-link {
+    font-size: 2.5rem;
+    animation: handshake 2s ease-in-out infinite;
+}
+@keyframes handshake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
 .partnership-box h3 {
     font-size: 2rem;
     font-weight: 900;
@@ -535,6 +574,9 @@ body {
     .partnership-box { padding: 35px 25px; }
     .partnership-box h3 { font-size: 1.5rem; }
     .services-grid, .goals-grid { grid-template-columns: 1fr; }
+    .partner-logo { width: 80px; height: 80px; }
+    .partners-link { font-size: 1.8rem; }
+    .partners-logos { gap: 15px; }
 }
 </style>
 </head>
@@ -543,7 +585,6 @@ body {
 <!-- ===== Header ===== -->
 <header class="header">
     <div class="container">
-        <!-- مكان اللوجو المخصص -->
         <div class="logo">
             <img src="IMG-20260930-WA0032.jpg" alt="Skill Hub Logo" class="logo-img">
             <div class="logo-text">
@@ -646,7 +687,7 @@ body {
                 <p>Skill Hub منصة تعليمية متخصصة في تقديم الكورسات والتدريبات العملية للطلاب في مختلف المجالات، بهدف مساعدتهم على اكتساب مهارات جديدة وتطوير قدراتهم بما يتناسب مع احتياجات الدراسة وسوق العمل.</p>
             </div>
             <div class="about-slide">
-                <span class="icon">🗓</span>
+                <span class="icon">📅</span>
                 <h3>تاريخ الإنشاء</h3>
                 <p>تأسست Skill Hub في عام ٢٠١٩ انطلاقًا من فكرة بسيطة: أن كل شخص لديه القدرة على التطور لكنه يحتاج إلى المكان المناسب والفرصة المناسبة لاكتساب المهارات والتطوير من ذاته.</p>
             </div>
@@ -709,7 +750,20 @@ body {
     <div class="container">
         <h2 class="section-title">شراكتنا</h2>
         <div class="partnership-box">
-            <span class="partnership-icon">🤝</span>
+            
+            <!-- اللوجوهات جنب بعض -->
+            <div class="partners-logos">
+                <div class="partner-logo-item">
+                    <img src="IMG-20260930-WA0032.jpg" alt="Skill Hub" class="partner-logo">
+                    <span>Skill Hub</span>
+                </div>
+                <div class="partners-link">🤝</div>
+                <div class="partner-logo-item">
+                    <img src="IMG-20261002-WA0026.jpg" alt="جامعة عين شمس" class="partner-logo">
+                    <span>جامعة عين شمس</span>
+                </div>
+            </div>
+
             <h3>شراكة مع <span>جامعة عين شمس</span></h3>
             <p>نفخر في Skill Hub بشراكتنا مع جامعة عين شمس لتقديم مجموعة من الكورسات والتدريبات التعليمية عبر منصتنا، بهدف إتاحة محتوى تعليمي متخصص يساعد المتعلمين على تطوير مهاراتهم واكتساب معارف عملية تدعم مسيرتهم الأكاديمية والمهنية.</p>
         </div>
@@ -724,7 +778,7 @@ body {
             <a href="tel:+201234567890" class="contact-card">
                 <span class="contact-icon">📞</span>
                 <h3>الخط الساخن</h3>
-                <p>1999</p>
+                <p>+20 123 456 7890</p>
             </a>
             <a href="https://wa.me/201234567890" target="_blank" class="contact-card">
                 <span class="contact-icon">💬</span>
