@@ -57,7 +57,7 @@ body {
 .logo-text h1 span { color: var(--purple); }
 .logo-text small { font-size: 0.75rem; color: var(--gray); font-weight: 600; margin-top: 2px; }
 
-.nav { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.nav { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
 .nav a {
     text-decoration: none; color: var(--navy);
     font-weight: 700; transition: color 0.3s; position: relative;
@@ -221,7 +221,7 @@ body {
 .initiative-intro strong { color: var(--navy); font-weight: 800; }
 .initiative-slogan {
     display: block; margin: 25px auto 0;
-    font-size: 1.4rem; font-weight: 900;
+    font-size: 1.3rem; font-weight: 900;
     color: var(--purple); text-align: center;
     padding: 15px 30px;
     background: linear-gradient(135deg, rgba(108,76,224,0.08), rgba(26,58,107,0.05));
@@ -263,189 +263,79 @@ body {
 .phase-body h4 { font-size: 1.2rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
 .phase-body p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; }
 
-/* ===== Media Center ===== */
-.media-center {
+/* ===== Media Hub (المركز الإعلامي) ===== */
+.media-hub {
     padding: 80px 0;
     background: linear-gradient(135deg, #eef2f9 0%, #f7f8fc 100%);
     position: relative; overflow: hidden;
 }
-.media-center::before {
-    content: '📰'; position: absolute; font-size: 18rem; opacity: 0.04;
+.media-hub::before {
+    content: '📰'; position: absolute; font-size: 18rem; opacity: 0.03;
     top: 30px; left: 30px;
 }
-.media-news-wrapper {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 35px; max-width: 1100px; margin: 0 auto;
-    position: relative; z-index: 2;
+.media-subtitle {
+    text-align: center; color: var(--gray);
+    font-size: 1.1rem; margin-top: -2rem;
+    margin-bottom: 50px; max-width: 800px;
+    margin-left: auto; margin-right: auto;
 }
+.media-block { margin-bottom: 60px; position: relative; z-index: 2; }
+.media-block:last-child { margin-bottom: 0; }
+.media-block-header {
+    display: flex; align-items: center; gap: 15px;
+    margin-bottom: 25px; padding-bottom: 15px;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(90deg, var(--purple), var(--navy)) 1;
+}
+.media-block-icon {
+    font-size: 1.8rem;
+    width: 55px; height: 55px;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(108,76,224,0.3);
+    flex-shrink: 0;
+}
+.media-block-title { font-size: 1.8rem; font-weight: 900; color: var(--navy); }
+
 .news-card {
-    background: var(--white); border-radius: 22px;
-    padding: 35px 30px; box-shadow: 0 12px 40px rgba(26,58,107,0.12);
-    transition: all 0.4s; position: relative;
-    border-top: 5px solid var(--purple);
-    display: flex; flex-direction: column;
+    background: var(--white); border-radius: 20px;
+    padding: 35px; box-shadow: 0 10px 35px rgba(26,58,107,0.1);
+    transition: all 0.4s; border-top: 5px solid var(--purple);
 }
 .news-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(108,76,224,0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(108,76,224,0.2);
 }
-.news-tag {
-    display: inline-block; padding: 5px 15px;
-    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
-    color: var(--white); border-radius: 20px;
-    font-size: 0.8rem; font-weight: 800;
-    margin-bottom: 15px; align-self: flex-start;
-}
-.news-card h3 {
+.news-card h4 {
     font-size: 1.4rem; font-weight: 900;
-    color: var(--navy); margin-bottom: 15px;
-    line-height: 1.4;
-}
-.news-date {
-    display: inline-block; color: var(--gray);
-    font-size: 0.85rem; font-weight: 700;
-    margin-bottom: 15px; padding: 5px 12px;
-    background: var(--bg-light); border-radius: 8px;
+    color: var(--navy); margin-bottom: 18px; line-height: 1.5;
 }
 .news-card p {
-    color: var(--gray); font-size: 1rem;
-    line-height: 1.9; margin-bottom: 15px;
+    color: var(--gray); font-size: 1.05rem;
+    line-height: 2; margin-bottom: 15px;
 }
-.news-card .news-contact {
-    margin-top: auto; padding-top: 20px;
+.news-card p:last-of-type { margin-bottom: 0; }
+.news-date {
+    display: inline-block; color: var(--gray);
+    font-size: 0.9rem; font-weight: 700;
+    margin-bottom: 18px; padding: 6px 14px;
+    background: var(--bg-light); border-radius: 8px;
+}
+.news-contact {
+    margin-top: 25px; padding-top: 20px;
     border-top: 2px dashed rgba(108,76,224,0.2);
-    font-size: 0.9rem;
+    font-size: 1rem; line-height: 1.9;
+    color: var(--navy);
 }
-.news-card .news-contact strong { color: var(--navy); }
-.news-card .news-contact a {
+.news-contact strong { color: var(--navy); font-weight: 800; }
+.news-contact a {
     color: var(--purple); font-weight: 800;
     text-decoration: none; direction: ltr; display: inline-block;
 }
-.news-card .news-contact a:hover { text-decoration: underline; }
+.news-contact a:hover { text-decoration: underline; }
 
-/* ===== Testimonials ===== */
-.testimonials {
-    padding: 80px 0;
-    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
-    color: var(--white); position: relative; overflow: hidden;
-}
-.testimonials::before {
-    content: '💬'; position: absolute; font-size: 18rem; opacity: 0.04;
-    top: 30px; right: 30px;
-}
-.testimonials .section-title { color: var(--white); }
-.testimonials .section-title::after { color: var(--purple-light); }
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 28px; position: relative; z-index: 2;
-}
-.testimonial-card {
-    background: rgba(255,255,255,0.06);
-    border: 2px solid rgba(255,255,255,0.12);
-    border-radius: 22px; padding: 30px 28px;
-    transition: all 0.4s; position: relative;
-    backdrop-filter: blur(10px);
-}
-.testimonial-card::before {
-    content: '"'; position: absolute; top: 5px; left: 25px;
-    font-size: 6rem; color: var(--purple-light);
-    opacity: 0.25; font-family: Georgia, serif;
-    line-height: 1;
-}
-.testimonial-card:hover {
-    background: rgba(108,76,224,0.15);
-    border-color: var(--purple-light);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 45px rgba(108,76,224,0.35);
-}
-.testimonial-stars {
-    color: var(--gold); font-size: 1.1rem;
-    letter-spacing: 3px; margin-bottom: 15px;
-    display: block;
-}
-.testimonial-text {
-    font-size: 1rem; line-height: 1.9;
-    color: var(--bg-light); margin-bottom: 22px;
-    position: relative; z-index: 1;
-}
-.testimonial-author {
-    display: flex; align-items: center; gap: 12px;
-    padding-top: 18px;
-    border-top: 2px dashed rgba(255,255,255,0.15);
-}
-.author-avatar {
-    width: 50px; height: 50px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 900; font-size: 1.3rem; color: var(--white);
-    flex-shrink: 0;
-    border: 2px solid var(--purple-light);
-}
-.author-info { display: flex; flex-direction: column; }
-.author-name { font-weight: 900; font-size: 1rem; color: var(--white); }
-.author-role { font-size: 0.85rem; color: var(--purple-light); font-weight: 700; }
-
-/* ===== Achievements ===== */
-.achievements {
-    padding: 80px 0; background: var(--bg-light);
-    position: relative; overflow: hidden;
-}
-.achievement-box {
-    max-width: 900px; margin: 0 auto;
-    background: var(--white); border-radius: 30px;
-    padding: 60px 50px; text-align: center;
-    box-shadow: 0 20px 60px rgba(26,58,107,0.15);
-    position: relative; overflow: hidden;
-}
-.achievement-box::before {
-    content: ''; position: absolute;
-    inset: -3px; border-radius: 30px;
-    background: linear-gradient(135deg, var(--navy), var(--purple));
-    z-index: -1;
-}
-.achievement-icon {
-    font-size: 4rem; margin-bottom: 20px;
-    display: block; animation: float-icon 3s ease-in-out infinite;
-}
-@keyframes float-icon {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-.achievement-num {
-    font-size: 6rem; font-weight: 900;
-    background: linear-gradient(135deg, var(--navy), var(--purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1; margin-bottom: 15px;
-    display: inline-block;
-}
-.achievement-label {
-    font-size: 1.5rem; font-weight: 900;
-    color: var(--navy); margin-bottom: 20px;
-}
-.achievement-desc {
-    font-size: 1.1rem; color: var(--gray);
-    line-height: 2; max-width: 650px;
-    margin: 0 auto;
-}
-
-/* ===== Partnership ===== */
-.partnership { padding: 80px 0; background: var(--bg-light); }
-.partnership-box {
-    max-width: 900px; margin: 0 auto;
-    background: var(--white); border-radius: 25px;
-    padding: 50px 40px; box-shadow: 0 15px 50px rgba(26,58,107,0.15);
-    border: 3px solid transparent; background-clip: padding-box;
-    position: relative; text-align: center;
-}
-.partnership-box::before {
-    content: ''; position: absolute; inset: -3px;
-    border-radius: 25px;
-    background: linear-gradient(135deg, var(--navy), var(--purple));
-    z-index: -1;
-}
+/* Partner Logos */
 .partners-logos {
     display: flex; align-items: center; justify-content: center;
     gap: 30px; margin-bottom: 30px; flex-wrap: wrap;
@@ -476,13 +366,98 @@ body {
     25% { transform: rotate(-10deg); }
     75% { transform: rotate(10deg); }
 }
-.partnership-box h3 {
-    font-size: 2rem; font-weight: 900;
+
+/* Testimonials Grid (inside media hub) */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+.testimonial-card {
+    background: var(--white);
+    border: 2px solid rgba(108,76,224,0.15);
+    border-radius: 22px; padding: 30px 28px;
+    transition: all 0.4s; position: relative;
+    box-shadow: 0 8px 25px rgba(26,58,107,0.08);
+}
+.testimonial-card::before {
+    content: '"'; position: absolute; top: 5px; left: 25px;
+    font-size: 6rem; color: var(--purple);
+    opacity: 0.15; font-family: Georgia, serif;
+    line-height: 1;
+}
+.testimonial-card:hover {
+    border-color: var(--purple);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(108,76,224,0.25);
+}
+.testimonial-stars {
+    color: var(--gold); font-size: 1.1rem;
+    letter-spacing: 3px; margin-bottom: 15px;
+    display: block;
+}
+.testimonial-text {
+    font-size: 1rem; line-height: 1.9;
+    color: var(--navy); margin-bottom: 22px;
+    position: relative; z-index: 1;
+}
+.testimonial-author {
+    display: flex; align-items: center; gap: 12px;
+    padding-top: 18px;
+    border-top: 2px dashed rgba(108,76,224,0.15);
+}
+.author-avatar {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 1.3rem; color: var(--white);
+    flex-shrink: 0;
+    border: 2px solid var(--purple-light);
+}
+.author-info { display: flex; flex-direction: column; }
+.author-name { font-weight: 900; font-size: 1rem; color: var(--navy); }
+.author-role { font-size: 0.85rem; color: var(--purple); font-weight: 700; }
+
+/* Achievement Box */
+.achievement-box {
+    background: var(--white);
+    border-radius: 25px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(26,58,107,0.12);
+    position: relative; overflow: hidden;
+    border-top: 5px solid var(--purple);
+    transition: all 0.4s;
+}
+.achievement-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 22px 60px rgba(108,76,224,0.25);
+}
+.achievement-icon {
+    font-size: 4rem; margin-bottom: 20px;
+    display: block; animation: float-icon 3s ease-in-out infinite;
+}
+@keyframes float-icon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.achievement-num {
+    font-size: 6rem; font-weight: 900;
+    background: linear-gradient(135deg, var(--navy), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1; margin-bottom: 15px;
+    display: inline-block;
+}
+.achievement-label {
+    font-size: 1.5rem; font-weight: 900;
     color: var(--navy); margin-bottom: 20px;
 }
-.partnership-box h3 span { color: var(--purple); }
-.partnership-box p {
-    font-size: 1.1rem; line-height: 2; color: var(--gray);
+.achievement-desc {
+    font-size: 1.1rem; color: var(--gray);
+    line-height: 2; max-width: 650px;
+    margin: 0 auto;
 }
 
 /* ===== Goals ===== */
@@ -555,9 +530,6 @@ body {
 .footer span { color: var(--purple-light); font-weight: 900; }
 
 /* ===== Responsive ===== */
-@media (max-width: 900px) {
-    .media-news-wrapper { grid-template-columns: 1fr; }
-}
 @media (max-width: 768px) {
     .header .container { justify-content: center; }
     .nav { gap: 12px; font-size: 0.85rem; }
@@ -574,16 +546,18 @@ body {
     .about-slide h3 { font-size: 1.5rem; }
     .about-slide p { font-size: 1rem; }
     .about-nav-btn { padding: 8px 18px; font-size: 0.85rem; }
-    .partnership-box, .achievement-box { padding: 35px 25px; }
-    .partnership-box h3 { font-size: 1.5rem; }
-    .achievement-num { font-size: 4rem; }
-    .achievement-label { font-size: 1.2rem; }
     .services-grid, .goals-grid, .testimonials-grid, .phases-grid { grid-template-columns: 1fr; }
     .partner-logo { width: 80px; height: 80px; }
     .partners-link { font-size: 1.8rem; }
     .partners-logos { gap: 15px; }
     .news-card { padding: 25px 22px; }
-    .news-card h3 { font-size: 1.2rem; }
+    .news-card h4 { font-size: 1.15rem; }
+    .achievement-box { padding: 35px 25px; }
+    .achievement-num { font-size: 4rem; }
+    .achievement-label { font-size: 1.2rem; }
+    .media-block-title { font-size: 1.4rem; }
+    .media-block-icon { width: 45px; height: 45px; font-size: 1.5rem; }
+    .initiative-slogan { font-size: 1rem; padding: 12px 20px; }
 }
 </style>
 </head><body>
@@ -604,8 +578,7 @@ body {
             <a href="#about">من نحن</a>
             <a href="#initiative">المبادرة</a>
             <a href="#media">المركز الإعلامي</a>
-            <a href="#partnership">الشراكة</a>
-            <a href="#testimonials">آراء الطلاب</a>
+            <a href="#goals">أهدافنا</a>
             <a href="#contact">تواصل</a>
             <a href="#contact" class="cta-btn">ابدأ الآن 🚀</a>
         </nav>
@@ -776,24 +749,32 @@ body {
     </div>
 </section>
 
-<!-- ===== Media Center ===== -->
-<section class="media-center" id="media">
+<!-- ===== Media Hub (المركز الإعلامي) ===== -->
+<section class="media-hub" id="media">
     <div class="container">
-        <h2 class="section-title">المركز الإعلامي</h2>
+        <h2 class="section-title">📰 المركز الإعلامي</h2>
+        <p class="media-subtitle">كل أخبارنا وبياناتنا الصحفية وشراكاتنا وآراء طلابنا وإنجازاتنا في مكان واحد</p>
 
-        <div class="media-news-wrapper">
-
-            <!-- الخبر الأول -->
+        <!-- ===== 1. الأخبار ===== -->
+        <div class="media-block">
+            <div class="media-block-header">
+                <span class="media-block-icon">📰</span>
+                <h3 class="media-block-title">أخبار</h3>
+            </div>
             <div class="news-card">
-                <span class="news-tag">📰 أخبار</span>
-                <h3>إطلاق منصة Skill Hub لتطوير مهارات الطلاب وتأهيلهم لسوق العمل</h3>
+                <h4>إطلاق منصة Skill Hub لتطوير مهارات الطلاب وتأهيلهم لسوق العمل</h4>
                 <p>أعلنت منصة Skill Hub عن إطلاق خدماتها التعليمية بهدف مساعدة الطلاب على اكتساب مهارات جديدة من خلال مجموعة متنوعة من الكورسات في مجالات التسويق والإعلام والتكنولوجيا وإدارة الأعمال، بما يسهم في تطوير قدراتهم وتأهيلهم لمتطلبات سوق العمل.</p>
             </div>
+        </div>
 
-            <!-- البيان الصحفي -->
+        <!-- ===== 2. البيان الصحفي ===== -->
+        <div class="media-block">
+            <div class="media-block-header">
+                <span class="media-block-icon">📢</span>
+                <h3 class="media-block-title">بيان صحفي</h3>
+            </div>
             <div class="news-card">
-                <span class="news-tag">📢 بيان صحفي</span>
-                <h3>تعلن منصة Skill Hub عن إطلاق برنامج تدريبي لتنمية المهارات الرقمية والمهنية لدى الطلاب</h3>
+                <h4>تعلن منصة Skill Hub عن إطلاق برنامج تدريبي لتنمية المهارات الرقمية والمهنية لدى الطلاب</h4>
                 <span class="news-date">📍 القاهرة – 14 أكتوبر 2026</span>
                 <p>تعلن منصة Skill Hub عن برنامج تدريبي مقترح يستهدف تنمية المهارات الرقمية والمهنية لدى طلاب الجامعات، بما يسهم في تعزيز قدراتهم العملية ومساعدتهم على الاستعداد لمتطلبات سوق العمل.</p>
                 <p>ويركز البرنامج على مجموعة من المهارات الأساسية، تشمل التسويق الرقمي، والتواصل الفعّال، والعمل الجماعي، وإعداد المشروعات، إلى جانب تنمية القدرة على تطبيق المعرفة النظرية في مواقف عملية تحاكي بيئة العمل.</p>
@@ -805,125 +786,122 @@ body {
                     البريد الإلكتروني: <a href="mailto:info@skillhub.com">info@skillhub.com</a>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
 
-<!-- ===== Testimonials ===== -->
-<section class="testimonials" id="testimonials">
-    <div class="container">
-        <h2 class="section-title">آراء الطلاب 🎓</h2>
-        <div class="testimonials-grid">
-
-            <div class="testimonial-card">
-                <span class="testimonial-stars">★★★★★</span>
-                <p class="testimonial-text">منصة Skill Hub ساعدتني أطور مهاراتي في التسويق والعلاقات العامة وأفهم إزاي أطبق اللي بتعلمه في مشروعات عملية بدل ما تكون مجرد معلومات نظرية.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">م</div>
-                    <div class="author-info">
-                        <span class="author-name">مريم أحمد</span>
-                        <span class="author-role">طالبة بكلية الإعلام</span>
+        <!-- ===== 3. شراكتنا ===== -->
+        <div class="media-block">
+            <div class="media-block-header">
+                <span class="media-block-icon">🤝</span>
+                <h3 class="media-block-title">شراكتنا</h3>
+            </div>
+            <div class="news-card">
+                <div class="partners-logos">
+                    <div class="partner-logo-item">
+                        <img src="IMG-20260930-WA0032.jpg" alt="Skill Hub" class="partner-logo">
+                        <span>Skill Hub</span>
+                    </div>
+                    <div class="partners-link">🤝</div>
+                    <div class="partner-logo-item">
+                        <img src="IMG-20261002-WA0026.jpg" alt="جامعة عين شمس" class="partner-logo">
+                        <span>جامعة عين شمس</span>
                     </div>
                 </div>
+                <h4 style="text-align:center;">شراكة مع <span style="color:var(--purple);">جامعة عين شمس</span></h4>
+                <p>تسعى منصة Skill Hub إلى تعزيز التعاون مع المؤسسات والشركات لتقديم فرص تدريبية للطلاب. في إطار سعيها لربط التعليم باحتياجات سوق العمل تعمل منصة Skill Hub على بناء شراكات مع الشركات والمؤسسات المختلفة بهدف توفير محتوى تدريبي عملي وإتاحة فرص تساعد الطلاب على اكتساب الخبرات اللازمة لبداية حياتهم المهنية.</p>
+                <p>وفي هذا الإطار تتضمن خطة التعاون المقترحة شراكة مع جامعة عين شمس لتقديم مجموعة من الكورسات والتدريبات التعليمية عبر منصة Skill Hub بهدف إتاحة محتوى تعليمي متخصص يساعد المتعلمين على تطوير مهاراتهم واكتساب معارف عملية تدعم مسيرتهم الأكاديمية والمهنية، بما يسهم في تعزيز التكامل بين التعليم والتطبيق العملي وإعداد الطلاب لمتطلبات سوق العمل.</p>
             </div>
-
-            <div class="testimonial-card">
-                <span class="testimonial-stars">★★★★★</span>
-                <p class="testimonial-text">المنصة ساعدتني في تطوير مهاراتي، بقيت أفهم أكتر متطلبات سوق العمل وعرفت إيه المهارات اللي محتاج أركز عليها علشان أكون مستعد للتدريب والشغل.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">ع</div>
-                    <div class="author-info">
-                        <span class="author-name">عمر محمد</span>
-                        <span class="author-role">طالب بكلية التجارة</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <span class="testimonial-stars">★★★★★</span>
-                <p class="testimonial-text">التجربة شجعتني أتعلم مهارات جديدة وأشتغل على تطوير نفسي باستمرار، وبقيت أكثر ثقة في قدراتي وفي المشروعات اللي بقدمها.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">س</div>
-                    <div class="author-info">
-                        <span class="author-name">سلمى محمود</span>
-                        <span class="author-role">طالبة بكلية الحاسبات والمعلومات</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <span class="testimonial-stars">★★★★★</span>
-                <p class="testimonial-text">الكورس ساعدني في تطوير مهاراتي في التسويق الرقمي، وساعدني أفكر بشكل أفضل في الحملات التسويقية وأفهم الجمهور المستهدف وأربط بين المحتوى والأهداف التسويقية.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">أ</div>
-                    <div class="author-info">
-                        <span class="author-name">أحمد مصطفى</span>
-                        <span class="author-role">Digital Marketing Specialist</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <span class="testimonial-stars">★★★★★</span>
-                <p class="testimonial-text">مهارات التواصل وكتابة المحتوى من أهم الحاجات اللي بحتاجها في شغلي، خدت كورس علاقات عامة في منصة Skill Hub وده ساعدني كتير في شغلي وساعدني أوصل الرسائل بشكل أكثر وضوحًا واحترافية.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">س</div>
-                    <div class="author-info">
-                        <span class="author-name">سارة محمد</span>
-                        <span class="author-role">Public Relations Specialist</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <span class="testimonial-stars">★★★★★</span>
-                <p class="testimonial-text">مجال السوشيال ميديا بيتطور باستمرار وعلشان كده لازم أطور مهاراتي بشكل مستمر، المنصة ساعدتني أطور أفكاري وأحسن طريقة إعداد المحتوى علشان يناسب الجمهور.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">م</div>
-                    <div class="author-info">
-                        <span class="author-name">منة علي</span>
-                        <span class="author-role">Social Media Specialist</span>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
 
-<!-- ===== Achievements ===== -->
-<section class="achievements" id="achievements">
-    <div class="container">
-        <h2 class="section-title">إنجازاتنا 🏅</h2>
-        <div class="achievement-box">
-            <span class="achievement-icon">🏆</span>
-            <div class="achievement-num">90%</div>
-            <div class="achievement-label">معدل رضا المشاركين</div>
-            <p class="achievement-desc">حققت منصة Skill Hub معدل رضا بلغ <strong>90%</strong> بين المشاركين في الكورسات والتدريبات، بما يعكس اهتمام المنصة بتقديم تجربة تعليمية تساعد المتعلمين على تطوير مهاراتهم وتحقيق أهدافهم الأكاديمية والمهنية.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ===== Partnership ===== -->
-<section class="partnership" id="partnership">
-    <div class="container">
-        <h2 class="section-title">شراكتنا</h2>
-        <div class="partnership-box">
-            <div class="partners-logos">
-                <div class="partner-logo-item">
-                    <img src="IMG-20260930-WA0032.jpg" alt="Skill Hub" class="partner-logo">
-                    <span>Skill Hub</span>
+        <!-- ===== 4. آراء الطلاب ===== -->
+        <div class="media-block">
+            <div class="media-block-header">
+                <span class="media-block-icon">💬</span>
+                <h3 class="media-block-title">آراء الطلاب 🎓</h3>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <span class="testimonial-stars">★★★★★</span>
+                    <p class="testimonial-text">منصة Skill Hub ساعدتني أطور مهاراتي في التسويق والعلاقات العامة وأفهم إزاي أطبق اللي بتعلمه في مشروعات عملية بدل ما تكون مجرد معلومات نظرية.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">م</div>
+                        <div class="author-info">
+                            <span class="author-name">مريم أحمد</span>
+                            <span class="author-role">طالبة بكلية الإعلام</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="partners-link">🤝</div>
-                <div class="partner-logo-item">
-                    <img src="IMG-20261002-WA0026.jpg" alt="جامعة عين شمس" class="partner-logo">
-                    <span>جامعة عين شمس</span>
+                <div class="testimonial-card">
+                    <span class="testimonial-stars">★★★★★</span>
+                    <p class="testimonial-text">المنصة ساعدتني في تطوير مهاراتي، بقيت أفهم أكتر متطلبات سوق العمل وعرفت إيه المهارات اللي محتاج أركز عليها علشان أكون مستعد للتدريب والشغل.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ع</div>
+                        <div class="author-info">
+                            <span class="author-name">عمر محمد</span>
+                            <span class="author-role">طالب بكلية التجارة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-stars">★★★★★</span>
+                    <p class="testimonial-text">التجربة شجعتني أتعلم مهارات جديدة وأشتغل على تطوير نفسي باستمرار، وبقيت أكثر ثقة في قدراتي وفي المشروعات اللي بقدمها.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">س</div>
+                        <div class="author-info">
+                            <span class="author-name">سلمى محمود</span>
+                            <span class="author-role">طالبة بكلية الحاسبات والمعلومات</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-stars">★★★★★</span>
+                    <p class="testimonial-text">الكورس ساعدني في تطوير مهاراتي في التسويق الرقمي، وساعدني أفكر بشكل أفضل في الحملات التسويقية وأفهم الجمهور المستهدف وأربط بين المحتوى والأهداف التسويقية.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">أ</div>
+                        <div class="author-info">
+                            <span class="author-name">أحمد مصطفى</span>
+                            <span class="author-role">Digital Marketing Specialist</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-stars">★★★★★</span>
+                    <p class="testimonial-text">مهارات التواصل وكتابة المحتوى من أهم الحاجات اللي بحتاجها في شغلي، خدت كورس علاقات عامة في منصة Skill Hub وده ساعدني كتير في شغلي وساعدني أوصل الرسائل بشكل أكثر وضوحًا واحترافية.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">س</div>
+                        <div class="author-info">
+                            <span class="author-name">سارة محمد</span>
+                            <span class="author-role">Public Relations Specialist</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-stars">★★★★★</span>
+                    <p class="testimonial-text">مجال السوشيال ميديا بيتطور باستمرار وعلشان كده لازم أطور مهاراتي بشكل مستمر، المنصة ساعدتني أطور أفكاري وأحسن طريقة إعداد المحتوى علشان يناسب الجمهور.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">م</div>
+                        <div class="author-info">
+                            <span class="author-name">منة علي</span>
+                            <span class="author-role">Social Media Specialist</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <h3>شراكة مع <span>جامعة عين شمس</span></h3>
-            <p>تسعى منصة Skill Hub إلى تعزيز التعاون مع المؤسسات والشركات لتقديم فرص تدريبية للطلاب. وفي هذا الإطار تتضمن خطة التعاون المقترحة شراكة مع جامعة عين شمس لتقديم مجموعة من الكورسات والتدريبات التعليمية عبر منصة Skill Hub، بهدف إتاحة محتوى تعليمي متخصص يساعد المتعلمين على تطوير مهاراتهم واكتساب معارف عملية تدعم مسيرتهم الأكاديمية والمهنية، بما يسهم في تعزيز التكامل بين التعليم والتطبيق العملي وإعداد الطلاب لمتطلبات سوق العمل.</p>
         </div>
+
+        <!-- ===== 5. إنجازاتنا ===== -->
+        <div class="media-block">
+            <div class="media-block-header">
+                <span class="media-block-icon">🏅</span>
+                <h3 class="media-block-title">إنجازاتنا</h3>
+            </div>
+            <div class="achievement-box">
+                <span class="achievement-icon">🏆</span>
+                <div class="achievement-num">90%</div>
+                <div class="achievement-label">معدل رضا المشاركين</div>
+                <p class="achievement-desc">حققت منصة Skill Hub معدل رضا بلغ <strong>90%</strong> بين المشاركين في الكورسات والتدريبات، بما يعكس اهتمام المنصة بتقديم تجربة تعليمية تساعد المتعلمين على تطوير مهاراتهم وتحقيق أهدافهم الأكاديمية والمهنية.</p>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -990,7 +968,7 @@ body {
     <div class="container">
         <p>© 2025 <span>Skill Hub</span> - جميع الحقوق محفوظة 🎓</p>
     </div>
-            </footer><script>
+</footer><script>
 // ===== Hero Slider =====
 const slides = document.querySelectorAll('.hero .slide');
 const dots = document.querySelectorAll('.dot');
