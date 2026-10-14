@@ -19,6 +19,7 @@
     --bg-light: #f7f8fc;
     --bg-card: #ffffff;
     --gray: #7a8aa0;
+    --gold: #f4b942;
 }
 
 body {
@@ -42,57 +43,25 @@ body {
     display: flex; justify-content: space-between; align-items: center;
     padding: 18px 20px; flex-wrap: wrap; gap: 15px;
 }
-
-.logo { 
-    display: flex; 
-    align-items: center; 
-    gap: 14px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
+.logo { display: flex; align-items: center; gap: 14px; cursor: pointer; transition: transform 0.3s; }
 .logo:hover { transform: scale(1.03); }
-
 .logo-img {
-    width: 70px; 
-    height: 70px;
-    border-radius: 16px;
-    object-fit: contain;
-    border: 2px solid var(--navy);
+    width: 70px; height: 70px; border-radius: 16px;
+    object-fit: contain; border: 2px solid var(--navy);
     box-shadow: 0 4px 15px rgba(108,76,224,0.25);
-    background: var(--white);
-    padding: 8px;
-    transition: all 0.3s;
+    background: var(--white); padding: 8px; transition: all 0.3s;
 }
-.logo:hover .logo-img {
-    border-color: var(--purple);
-    box-shadow: 0 6px 22px rgba(108,76,224,0.45);
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-}
-.logo-text h1 {
-    font-size: 1.9rem; 
-    font-weight: 900;
-    color: var(--navy);
-    letter-spacing: -1px;
-}
+.logo:hover .logo-img { border-color: var(--purple); box-shadow: 0 6px 22px rgba(108,76,224,0.45); }
+.logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.logo-text h1 { font-size: 1.9rem; font-weight: 900; color: var(--navy); letter-spacing: -1px; }
 .logo-text h1 span { color: var(--purple); }
-.logo-text small {
-    font-size: 0.75rem;
-    color: var(--gray);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin-top: 2px;
-}
+.logo-text small { font-size: 0.75rem; color: var(--gray); font-weight: 600; margin-top: 2px; }
 
-.nav { display: flex; gap: 25px; align-items: center; flex-wrap: wrap; }
+.nav { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
 .nav a {
     text-decoration: none; color: var(--navy);
-    font-weight: 700; transition: color 0.3s;
-    position: relative;
+    font-weight: 700; transition: color 0.3s; position: relative;
+    font-size: 0.9rem;
 }
 .nav a:hover { color: var(--purple); }
 .nav a::after {
@@ -103,60 +72,34 @@ body {
 .nav a:hover::after { width: 100%; }
 .cta-btn {
     background: var(--navy) !important; color: var(--white) !important;
-    padding: 10px 22px; border-radius: 30px;
-    cursor: pointer; transition: all 0.3s;
+    padding: 10px 20px; border-radius: 30px; transition: all 0.3s;
 }
 .cta-btn::after { display: none; }
-.cta-btn:hover { background: var(--purple) !important; color: var(--white) !important; }
+.cta-btn:hover { background: var(--purple) !important; }
 
 /* ===== Hero Slider ===== */
-.hero {
-    position: relative;
-    height: 600px;
-    overflow: hidden;
-    background: var(--navy-dark);
-}
+.hero { position: relative; height: 600px; overflow: hidden; background: var(--navy-dark); }
 .slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
+    position: absolute; inset: 0; opacity: 0;
     transition: opacity 1s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
 }
 .slide.active { opacity: 1; }
 .slide-content {
-    text-align: center;
-    color: var(--white);
-    max-width: 800px;
-    padding: 0 20px;
-    transform: translateY(20px);
-    transition: transform 1s ease;
+    text-align: center; color: var(--white); max-width: 800px;
+    padding: 0 20px; transform: translateY(20px); transition: transform 1s ease;
 }
 .slide.active .slide-content { transform: translateY(0); }
-.slide-content h2 {
-    font-size: 3rem; font-weight: 900;
-    margin-bottom: 20px;
-    line-height: 1.3;
-}
+.slide-content h2 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; line-height: 1.3; }
 .slide-content h2 span { color: var(--purple-light); }
-.slide-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-    line-height: 1.8;
-}
+.slide-content p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; line-height: 1.8; }
 .btn-primary {
     display: inline-block;
     background: linear-gradient(135deg, var(--purple), var(--purple-dark));
-    color: var(--white);
-    padding: 16px 45px; border-radius: 50px;
-    text-decoration: none; font-weight: 800;
-    font-size: 1.1rem; border: none; cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 8px 20px rgba(108,76,224,0.4);
-    font-family: inherit;
+    color: var(--white); padding: 16px 45px; border-radius: 50px;
+    text-decoration: none; font-weight: 800; font-size: 1.1rem;
+    border: none; cursor: pointer; transition: all 0.3s;
+    box-shadow: 0 8px 20px rgba(108,76,224,0.4); font-family: inherit;
 }
 .btn-primary:hover {
     background: linear-gradient(135deg, var(--navy), var(--navy-light));
@@ -166,83 +109,55 @@ body {
 .slide-1 { background: linear-gradient(135deg, #0f2547 0%, #1a3a6b 50%, #2c5aa0 100%); }
 .slide-2 { background: linear-gradient(135deg, #1a3a6b 0%, #6c4ce0 100%); }
 .slide-3 { background: linear-gradient(135deg, #0f2547 0%, #5236b8 100%); }
-
 .slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.2);
-    color: var(--white);
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(255,255,255,0.2); color: var(--white);
     border: 2px solid rgba(255,255,255,0.4);
-    width: 55px; height: 55px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    z-index: 10;
-    display: flex; align-items: center; justify-content: center;
+    width: 55px; height: 55px; border-radius: 50%;
+    font-size: 1.5rem; cursor: pointer; transition: all 0.3s;
+    z-index: 10; display: flex; align-items: center; justify-content: center;
 }
 .slider-btn:hover { background: var(--purple); border-color: var(--purple); }
 .slider-btn.prev { right: 25px; }
 .slider-btn.next { left: 25px; }
-
 .slider-dots {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex; gap: 12px;
-    z-index: 10;
+    position: absolute; bottom: 30px; left: 50%;
+    transform: translateX(-50%); display: flex; gap: 12px; z-index: 10;
 }
 .dot {
-    width: 14px; height: 14px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.4);
-    cursor: pointer;
-    transition: all 0.3s;
-    border: 2px solid transparent;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: rgba(255,255,255,0.4); cursor: pointer;
+    transition: all 0.3s; border: 2px solid transparent;
 }
-.dot.active {
-    background: var(--purple-light);
-    transform: scale(1.3);
-    border-color: var(--white);
-}
+.dot.active { background: var(--purple-light); transform: scale(1.3); border-color: var(--white); }
 
+/* ===== Section Title ===== */
 .section-title {
     font-size: 2.5rem; font-weight: 900;
     text-align: center; color: var(--navy);
     margin-bottom: 3rem; position: relative;
 }
 .section-title::after {
-    content: '◆ ◆ ◆';
-    display: block; font-size: 1rem;
-    color: var(--purple);
-    margin-top: 0.7rem;
-    letter-spacing: 8px;
+    content: '◆ ◆ ◆'; display: block; font-size: 1rem;
+    color: var(--purple); margin-top: 0.7rem; letter-spacing: 8px;
 }
 
 /* ===== Services ===== */
 .services { padding: 80px 0; background: var(--bg-light); }
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
 }
 .service-card {
-    background: var(--bg-card);
-    border-radius: 20px; overflow: hidden;
+    background: var(--bg-card); border-radius: 20px; overflow: hidden;
     box-shadow: 0 8px 25px rgba(26,58,107,0.12);
-    transition: all 0.4s ease;
-    position: relative; cursor: pointer;
-    border: 2px solid transparent;
-    padding: 30px 25px;
-    text-align: center;
+    transition: all 0.4s ease; position: relative;
+    border: 2px solid transparent; padding: 30px 25px; text-align: center;
 }
 .service-card::before {
     content: ''; position: absolute; inset: 8px;
     border: 2px dashed rgba(26,58,107,0.15);
-    border-radius: 14px;
-    pointer-events: none; z-index: 0;
+    border-radius: 14px; pointer-events: none; z-index: 0;
 }
 .service-card:hover {
     transform: translateY(-10px);
@@ -250,165 +165,299 @@ body {
     border-color: var(--purple);
 }
 .service-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    display: block;
-    position: relative; z-index: 1;
-    transition: transform 0.4s;
+    font-size: 4rem; margin-bottom: 20px; display: block;
+    position: relative; z-index: 1; transition: transform 0.4s;
 }
 .service-card:hover .service-icon { transform: scale(1.15) rotate(-5deg); }
 .service-card h3 {
     font-size: 1.3rem; font-weight: 800;
-    color: var(--navy); margin-bottom: 10px;
-    position: relative; z-index: 1;
+    color: var(--navy); margin-bottom: 10px; position: relative; z-index: 1;
 }
 .service-card p {
     color: var(--gray); font-size: 0.95rem;
-    position: relative; z-index: 1;
-    line-height: 1.7;
+    position: relative; z-index: 1; line-height: 1.7;
 }
 
 /* ===== About Slider ===== */
 .about {
     padding: 80px 0;
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
-    color: var(--white);
-    position: relative;
-    overflow: hidden;
+    color: var(--white); position: relative; overflow: hidden;
 }
-.about::before {
-    content: '📚'; position: absolute;
-    font-size: 18rem; opacity: 0.04;
-    top: 20px; left: 20px;
-}
-.about::after {
-    content: '🎓'; position: absolute;
-    font-size: 12rem; opacity: 0.04;
-    bottom: -30px; right: 30px;
-}
+.about::before { content: '📚'; position: absolute; font-size: 18rem; opacity: 0.04; top: 20px; left: 20px; }
+.about::after { content: '🎓'; position: absolute; font-size: 12rem; opacity: 0.04; bottom: -30px; right: 30px; }
 .about .section-title { color: var(--white); }
 .about .section-title::after { color: var(--purple-light); }
-
-.about-slider {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    min-height: 380px;
-    z-index: 2;
-}
+.about-slider { max-width: 900px; margin: 0 auto; position: relative; min-height: 380px; z-index: 2; }
 .about-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.6s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
+    position: absolute; inset: 0; opacity: 0; visibility: hidden;
+    transition: all 0.6s ease; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center; padding: 20px;
 }
-.about-slide.active {
-    opacity: 1;
-    visibility: visible;
-    position: relative;
-}
-.about-slide .icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    display: block;
-}
-.about-slide h3 {
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--purple-light);
-    margin-bottom: 20px;
-}
-.about-slide p {
-    font-size: 1.15rem;
-    line-height: 2;
-    color: var(--bg-light);
-    opacity: 0.95;
-}
-
-.about-nav {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 30px;
-    position: relative;
-    z-index: 5;
-    flex-wrap: wrap;
-}
+.about-slide.active { opacity: 1; visibility: visible; position: relative; }
+.about-slide .icon { font-size: 4rem; margin-bottom: 20px; display: block; }
+.about-slide h3 { font-size: 2rem; font-weight: 900; color: var(--purple-light); margin-bottom: 20px; }
+.about-slide p { font-size: 1.15rem; line-height: 2; color: var(--bg-light); opacity: 0.95; }
+.about-nav { display: flex; justify-content: center; gap: 12px; margin-top: 30px; position: relative; flex-wrap: wrap; }
 .about-nav-btn {
-    background: rgba(255,255,255,0.1);
-    color: var(--white);
+    background: rgba(255,255,255,0.1); color: var(--white);
     border: 2px solid rgba(255,255,255,0.3);
-    padding: 10px 25px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: 700;
-    transition: all 0.3s;
-    font-size: 0.95rem;
+    padding: 10px 25px; border-radius: 30px;
+    cursor: pointer; font-family: inherit; font-weight: 700;
+    transition: all 0.3s; font-size: 0.95rem;
 }
-.about-nav-btn:hover,
-.about-nav-btn.active {
-    background: var(--purple);
-    border-color: var(--purple);
+.about-nav-btn:hover, .about-nav-btn.active {
+    background: var(--purple); border-color: var(--purple);
     transform: translateY(-2px);
 }
 
-/* ===== Partnership ===== */
-.partnership {
-    padding: 80px 0;
-    background: var(--bg-light);
+/* ===== Initiative ===== */
+.initiative { padding: 80px 0; background: var(--white); position: relative; overflow: hidden; }
+.initiative-intro {
+    max-width: 900px; margin: 0 auto 40px; text-align: center;
+    font-size: 1.1rem; line-height: 2; color: var(--gray);
 }
-.partnership-box {
-    max-width: 900px;
-    margin: 0 auto;
-    background: var(--white);
-    border-radius: 25px;
-    padding: 50px 40px;
-    box-shadow: 0 15px 50px rgba(26,58,107,0.15);
-    border: 3px solid transparent;
-    background-clip: padding-box;
+.initiative-intro p { margin-bottom: 15px; }
+.initiative-intro strong { color: var(--navy); font-weight: 800; }
+.initiative-slogan {
+    display: block; margin: 25px auto 0;
+    font-size: 1.4rem; font-weight: 900;
+    color: var(--purple); text-align: center;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, rgba(108,76,224,0.08), rgba(26,58,107,0.05));
+    border-radius: 50px; max-width: fit-content;
+    border: 2px dashed var(--purple);
+}
+.phases-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px; margin-top: 50px;
+}
+.phase-card {
+    background: var(--white); border-radius: 22px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(26,58,107,0.12);
+    transition: all 0.4s; position: relative;
+    border: 2px solid transparent;
+}
+.phase-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(108,76,224,0.28);
+    border-color: var(--purple);
+}
+.phase-img-wrap {
+    width: 100%; height: 200px; overflow: hidden;
+    background: linear-gradient(135deg, #e8ecf5, #f5f0ff);
     position: relative;
-    text-align: center;
+}
+.phase-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.phase-card:hover .phase-img-wrap img { transform: scale(1.1); }
+.phase-num {
+    position: absolute; top: 15px; right: 15px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    color: var(--white); width: 55px; height: 55px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 1.3rem;
+    box-shadow: 0 6px 15px rgba(108,76,224,0.5);
+    border: 3px solid var(--white); z-index: 2;
+}
+.phase-body { padding: 25px; text-align: center; }
+.phase-body h4 { font-size: 1.2rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.phase-body p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; }
+
+/* ===== Media Center ===== */
+.media-center {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #eef2f9 0%, #f7f8fc 100%);
+    position: relative; overflow: hidden;
+}
+.media-center::before {
+    content: '📰'; position: absolute; font-size: 18rem; opacity: 0.04;
+    top: 30px; left: 30px;
+}
+.media-news-wrapper {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 35px; max-width: 1100px; margin: 0 auto;
+    position: relative; z-index: 2;
+}
+.news-card {
+    background: var(--white); border-radius: 22px;
+    padding: 35px 30px; box-shadow: 0 12px 40px rgba(26,58,107,0.12);
+    transition: all 0.4s; position: relative;
+    border-top: 5px solid var(--purple);
+    display: flex; flex-direction: column;
+}
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(108,76,224,0.25);
+}
+.news-tag {
+    display: inline-block; padding: 5px 15px;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    color: var(--white); border-radius: 20px;
+    font-size: 0.8rem; font-weight: 800;
+    margin-bottom: 15px; align-self: flex-start;
+}
+.news-card h3 {
+    font-size: 1.4rem; font-weight: 900;
+    color: var(--navy); margin-bottom: 15px;
+    line-height: 1.4;
+}
+.news-date {
+    display: inline-block; color: var(--gray);
+    font-size: 0.85rem; font-weight: 700;
+    margin-bottom: 15px; padding: 5px 12px;
+    background: var(--bg-light); border-radius: 8px;
+}
+.news-card p {
+    color: var(--gray); font-size: 1rem;
+    line-height: 1.9; margin-bottom: 15px;
+}
+.news-card .news-contact {
+    margin-top: auto; padding-top: 20px;
+    border-top: 2px dashed rgba(108,76,224,0.2);
+    font-size: 0.9rem;
+}
+.news-card .news-contact strong { color: var(--navy); }
+.news-card .news-contact a {
+    color: var(--purple); font-weight: 800;
+    text-decoration: none; direction: ltr; display: inline-block;
+}
+.news-card .news-contact a:hover { text-decoration: underline; }
+
+/* ===== Testimonials ===== */
+.testimonials {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+    color: var(--white); position: relative; overflow: hidden;
+}
+.testimonials::before {
+    content: '💬'; position: absolute; font-size: 18rem; opacity: 0.04;
+    top: 30px; right: 30px;
+}
+.testimonials .section-title { color: var(--white); }
+.testimonials .section-title::after { color: var(--purple-light); }
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px; position: relative; z-index: 2;
+}
+.testimonial-card {
+    background: rgba(255,255,255,0.06);
+    border: 2px solid rgba(255,255,255,0.12);
+    border-radius: 22px; padding: 30px 28px;
+    transition: all 0.4s; position: relative;
+    backdrop-filter: blur(10px);
+}
+.testimonial-card::before {
+    content: '"'; position: absolute; top: 5px; left: 25px;
+    font-size: 6rem; color: var(--purple-light);
+    opacity: 0.25; font-family: Georgia, serif;
+    line-height: 1;
+}
+.testimonial-card:hover {
+    background: rgba(108,76,224,0.15);
+    border-color: var(--purple-light);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(108,76,224,0.35);
+}
+.testimonial-stars {
+    color: var(--gold); font-size: 1.1rem;
+    letter-spacing: 3px; margin-bottom: 15px;
+    display: block;
+}
+.testimonial-text {
+    font-size: 1rem; line-height: 1.9;
+    color: var(--bg-light); margin-bottom: 22px;
+    position: relative; z-index: 1;
+}
+.testimonial-author {
+    display: flex; align-items: center; gap: 12px;
+    padding-top: 18px;
+    border-top: 2px dashed rgba(255,255,255,0.15);
+}
+.author-avatar {
+    width: 50px; height: 50px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 1.3rem; color: var(--white);
+    flex-shrink: 0;
+    border: 2px solid var(--purple-light);
+}
+.author-info { display: flex; flex-direction: column; }
+.author-name { font-weight: 900; font-size: 1rem; color: var(--white); }
+.author-role { font-size: 0.85rem; color: var(--purple-light); font-weight: 700; }
+
+/* ===== Achievements ===== */
+.achievements {
+    padding: 80px 0; background: var(--bg-light);
+    position: relative; overflow: hidden;
+}
+.achievement-box {
+    max-width: 900px; margin: 0 auto;
+    background: var(--white); border-radius: 30px;
+    padding: 60px 50px; text-align: center;
+    box-shadow: 0 20px 60px rgba(26,58,107,0.15);
+    position: relative; overflow: hidden;
+}
+.achievement-box::before {
+    content: ''; position: absolute;
+    inset: -3px; border-radius: 30px;
+    background: linear-gradient(135deg, var(--navy), var(--purple));
+    z-index: -1;
+}
+.achievement-icon {
+    font-size: 4rem; margin-bottom: 20px;
+    display: block; animation: float-icon 3s ease-in-out infinite;
+}
+@keyframes float-icon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.achievement-num {
+    font-size: 6rem; font-weight: 900;
+    background: linear-gradient(135deg, var(--navy), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1; margin-bottom: 15px;
+    display: inline-block;
+}
+.achievement-label {
+    font-size: 1.5rem; font-weight: 900;
+    color: var(--navy); margin-bottom: 20px;
+}
+.achievement-desc {
+    font-size: 1.1rem; color: var(--gray);
+    line-height: 2; max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ===== Partnership ===== */
+.partnership { padding: 80px 0; background: var(--bg-light); }
+.partnership-box {
+    max-width: 900px; margin: 0 auto;
+    background: var(--white); border-radius: 25px;
+    padding: 50px 40px; box-shadow: 0 15px 50px rgba(26,58,107,0.15);
+    border: 3px solid transparent; background-clip: padding-box;
+    position: relative; text-align: center;
 }
 .partnership-box::before {
-    content: '';
-    position: absolute;
-    inset: -3px;
+    content: ''; position: absolute; inset: -3px;
     border-radius: 25px;
     background: linear-gradient(135deg, var(--navy), var(--purple));
     z-index: -1;
 }
-
-/* ===== Partner Logos ===== */
 .partners-logos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
+    display: flex; align-items: center; justify-content: center;
+    gap: 30px; margin-bottom: 30px; flex-wrap: wrap;
 }
 .partner-logo-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 10px;
 }
 .partner-logo {
-    width: 110px;
-    height: 110px;
-    border-radius: 20px;
-    object-fit: contain;
-    background: var(--white);
-    padding: 10px;
-    border: 2px solid var(--navy);
+    width: 110px; height: 110px; border-radius: 20px;
+    object-fit: contain; background: var(--white);
+    padding: 10px; border: 2px solid var(--navy);
     box-shadow: 0 6px 20px rgba(108,76,224,0.2);
     transition: all 0.3s;
 }
@@ -417,11 +466,7 @@ body {
     border-color: var(--purple);
     box-shadow: 0 10px 30px rgba(108,76,224,0.4);
 }
-.partner-logo-item span {
-    font-weight: 800;
-    color: var(--navy);
-    font-size: 0.95rem;
-}
+.partner-logo-item span { font-weight: 800; color: var(--navy); font-size: 0.95rem; }
 .partners-link {
     font-size: 2.5rem;
     animation: handshake 2s ease-in-out infinite;
@@ -431,34 +476,25 @@ body {
     25% { transform: rotate(-10deg); }
     75% { transform: rotate(10deg); }
 }
-
 .partnership-box h3 {
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--navy);
-    margin-bottom: 20px;
+    font-size: 2rem; font-weight: 900;
+    color: var(--navy); margin-bottom: 20px;
 }
 .partnership-box h3 span { color: var(--purple); }
 .partnership-box p {
-    font-size: 1.15rem;
-    line-height: 2;
-    color: var(--gray);
+    font-size: 1.1rem; line-height: 2; color: var(--gray);
 }
 
 /* ===== Goals ===== */
 .goals { padding: 80px 0; background: var(--bg-light); }
 .goals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 25px;
 }
 .goal-card {
-    background: var(--white);
-    border-radius: 18px;
-    padding: 30px 25px;
-    box-shadow: 0 6px 20px rgba(26,58,107,0.1);
-    transition: all 0.3s;
-    border-right: 5px solid var(--purple);
+    background: var(--white); border-radius: 18px;
+    padding: 30px 25px; box-shadow: 0 6px 20px rgba(26,58,107,0.1);
+    transition: all 0.3s; border-right: 5px solid var(--purple);
     position: relative;
 }
 .goal-card:hover {
@@ -467,83 +503,47 @@ body {
     border-right-color: var(--navy);
 }
 .goal-num {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: var(--purple);
-    opacity: 0.4;
-    line-height: 1;
-    margin-bottom: 10px;
+    font-size: 2.5rem; font-weight: 900;
+    color: var(--purple); opacity: 0.4;
+    line-height: 1; margin-bottom: 10px;
 }
-.goal-card h4 {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--navy);
-    margin-bottom: 10px;
-}
-.goal-card p {
-    color: var(--gray);
-    font-size: 0.95rem;
-    line-height: 1.7;
-}
+.goal-card h4 { font-size: 1.2rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.goal-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; }
 
 /* ===== Contact ===== */
 .contact {
     padding: 80px 0;
     background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
-    color: var(--white);
-    position: relative;
-    overflow: hidden;
+    color: var(--white); position: relative; overflow: hidden;
 }
 .contact::before {
-    content: '📞'; position: absolute;
-    font-size: 15rem; opacity: 0.04;
+    content: '📞'; position: absolute; font-size: 15rem; opacity: 0.04;
     top: 30px; left: 30px;
 }
 .contact .section-title { color: var(--white); }
 .contact .section-title::after { color: var(--purple-light); }
-
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    max-width: 1000px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
+    gap: 25px; max-width: 1000px; margin: 0 auto;
+    position: relative; z-index: 2;
 }
 .contact-card {
     background: rgba(255,255,255,0.08);
     border: 2px solid rgba(255,255,255,0.15);
-    border-radius: 20px;
-    padding: 35px 25px;
-    text-align: center;
-    text-decoration: none;
-    color: var(--white);
-    transition: all 0.3s;
+    border-radius: 20px; padding: 35px 25px;
+    text-align: center; text-decoration: none;
+    color: var(--white); transition: all 0.3s;
     backdrop-filter: blur(10px);
 }
 .contact-card:hover {
-    background: var(--purple);
-    border-color: var(--purple-light);
+    background: var(--purple); border-color: var(--purple-light);
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(108,76,224,0.4);
 }
-.contact-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    display: block;
-}
-.contact-card h3 {
-    font-size: 1.3rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-.contact-card p {
-    font-size: 1rem;
-    opacity: 0.9;
-    direction: ltr;
-    unicode-bidi: embed;
-}
+.contact-icon { font-size: 3rem; margin-bottom: 15px; display: block; }
+.contact-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 10px; }
+.contact-card p { font-size: 1rem; opacity: 0.9; direction: ltr; unicode-bidi: embed; }
 
 /* ===== Footer ===== */
 .footer {
@@ -555,9 +555,12 @@ body {
 .footer span { color: var(--purple-light); font-weight: 900; }
 
 /* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .media-news-wrapper { grid-template-columns: 1fr; }
+}
 @media (max-width: 768px) {
     .header .container { justify-content: center; }
-    .nav { gap: 15px; font-size: 0.9rem; }
+    .nav { gap: 12px; font-size: 0.85rem; }
     .logo-img { width: 55px; height: 55px; }
     .logo-text h1 { font-size: 1.4rem; }
     .logo-text small { font-size: 0.65rem; }
@@ -571,16 +574,19 @@ body {
     .about-slide h3 { font-size: 1.5rem; }
     .about-slide p { font-size: 1rem; }
     .about-nav-btn { padding: 8px 18px; font-size: 0.85rem; }
-    .partnership-box { padding: 35px 25px; }
+    .partnership-box, .achievement-box { padding: 35px 25px; }
     .partnership-box h3 { font-size: 1.5rem; }
-    .services-grid, .goals-grid { grid-template-columns: 1fr; }
+    .achievement-num { font-size: 4rem; }
+    .achievement-label { font-size: 1.2rem; }
+    .services-grid, .goals-grid, .testimonials-grid, .phases-grid { grid-template-columns: 1fr; }
     .partner-logo { width: 80px; height: 80px; }
     .partners-link { font-size: 1.8rem; }
     .partners-logos { gap: 15px; }
+    .news-card { padding: 25px 22px; }
+    .news-card h3 { font-size: 1.2rem; }
 }
 </style>
-</head>
-<body>
+</head><body>
 
 <!-- ===== Header ===== -->
 <header class="header">
@@ -596,7 +602,10 @@ body {
             <a href="#home">الرئيسية</a>
             <a href="#services">الكورسات</a>
             <a href="#about">من نحن</a>
+            <a href="#initiative">المبادرة</a>
+            <a href="#media">المركز الإعلامي</a>
             <a href="#partnership">الشراكة</a>
+            <a href="#testimonials">آراء الطلاب</a>
             <a href="#contact">تواصل</a>
             <a href="#contact" class="cta-btn">ابدأ الآن 🚀</a>
         </nav>
@@ -621,9 +630,9 @@ body {
     </div>
     <div class="slide slide-3">
         <div class="slide-content">
-            <h2>شراكة مع <span>جامعة عين شمس</span></h2>
-            <p>محتوى تعليمي متخصص يدعم مسيرتك الأكاديمية والمهنية</p>
-            <a href="#partnership" class="btn-primary">تفاصيل الشراكة 🤝</a>
+            <h2>مبادرة <span>من مهارة لفرصة</span></h2>
+            <p>اكتشف مهارتك، طوّر نفسك، طبّق اللي اتعلمته، وحوّل مهارتك لفرصة حقيقية</p>
+            <a href="#initiative" class="btn-primary">اكتشف المبادرة 🚀</a>
         </div>
     </div>
 
@@ -711,6 +720,213 @@ body {
     </div>
 </section>
 
+<!-- ===== Initiative ===== -->
+<section class="initiative" id="initiative">
+    <div class="container">
+        <h2 class="section-title">مبادرتنا</h2>
+        <div class="initiative-intro">
+            <p>في <strong>Skill Hub</strong> مؤمنين إن كل طالب عنده القدرة على النجاح والتميز لكنه محتاج الفرصة المناسبة عشان يكتشف إمكانياته ويطورها.</p>
+            <p>ومن هنا أطلقنا مبادرة <strong>«من مهارة لفرصة»</strong> علشان نساعد طلاب الجامعات على اكتشاف قدراتهم وتطوير مهاراتهم وخوض تجارب عملية تجهزهم لمتطلبات سوق العمل.</p>
+            <p>من خلال التحديات والأنشطة التطبيقية والإرشادات المهنية نساعدك تنقل اللي بتتعلمه من مجرد معلومات إلى خبرة تقدر تستخدمها وتضيفها لمسارك المهني.</p>
+            <span class="initiative-slogan">✨ ابدأ بمهارة، طوّر قدراتك، واصنع فرصتك بنفسك ✨</span>
+        </div>
+
+        <div class="phases-grid">
+            <div class="phase-card">
+                <div class="phase-img-wrap">
+                    <img src="phase-1.jpg" alt="المرحلة الأولى">
+                    <div class="phase-num">1</div>
+                </div>
+                <div class="phase-body">
+                    <h4>اكتشف مهارتك</h4>
+                    <p>الطالب بيجاوب عن أسئلة بسيطة تساعده يحدد اهتماماته والمهارات اللي محتاج يطورها.</p>
+                </div>
+            </div>
+            <div class="phase-card">
+                <div class="phase-img-wrap">
+                    <img src="phase-2.jpg" alt="المرحلة الثانية">
+                    <div class="phase-num">2</div>
+                </div>
+                <div class="phase-body">
+                    <h4>طوّر نفسك</h4>
+                    <p>يحصل الطالب على محتوى تعليمي أو تدريبات قصيرة تساعده يكتسب المهارة المطلوبة.</p>
+                </div>
+            </div>
+            <div class="phase-card">
+                <div class="phase-img-wrap">
+                    <img src="phase-3.jpg" alt="المرحلة الثالثة">
+                    <div class="phase-num">3</div>
+                </div>
+                <div class="phase-body">
+                    <h4>طبّق اللي اتعلمته</h4>
+                    <p>يشارك الطالب في تحدٍّ عملي زي إعداد حملة تسويقية أو تصميم محتوى أو كتابة خطة علاقات عامة.</p>
+                </div>
+            </div>
+            <div class="phase-card">
+                <div class="phase-img-wrap">
+                    <img src="phase-4.jpg" alt="المرحلة الرابعة">
+                    <div class="phase-num">4</div>
+                </div>
+                <div class="phase-body">
+                    <h4>حوّل مهارتك لفرصة</h4>
+                    <p>يجمع الطالب أفضل أعماله في Portfolio يقدر يستخدمه في التقديم للتدريبات وفرص العمل.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Media Center ===== -->
+<section class="media-center" id="media">
+    <div class="container">
+        <h2 class="section-title">المركز الإعلامي</h2>
+
+        <div class="media-news-wrapper">
+
+            <!-- الخبر الأول -->
+            <div class="news-card">
+                <span class="news-tag">📰 أخبار</span>
+                <h3>إطلاق منصة Skill Hub لتطوير مهارات الطلاب وتأهيلهم لسوق العمل</h3>
+                <p>أعلنت منصة Skill Hub عن إطلاق خدماتها التعليمية بهدف مساعدة الطلاب على اكتساب مهارات جديدة من خلال مجموعة متنوعة من الكورسات في مجالات التسويق والإعلام والتكنولوجيا وإدارة الأعمال، بما يسهم في تطوير قدراتهم وتأهيلهم لمتطلبات سوق العمل.</p>
+            </div>
+
+            <!-- البيان الصحفي -->
+            <div class="news-card">
+                <span class="news-tag">📢 بيان صحفي</span>
+                <h3>تعلن منصة Skill Hub عن إطلاق برنامج تدريبي لتنمية المهارات الرقمية والمهنية لدى الطلاب</h3>
+                <span class="news-date">📍 القاهرة – 14 أكتوبر 2026</span>
+                <p>تعلن منصة Skill Hub عن برنامج تدريبي مقترح يستهدف تنمية المهارات الرقمية والمهنية لدى طلاب الجامعات، بما يسهم في تعزيز قدراتهم العملية ومساعدتهم على الاستعداد لمتطلبات سوق العمل.</p>
+                <p>ويركز البرنامج على مجموعة من المهارات الأساسية، تشمل التسويق الرقمي، والتواصل الفعّال، والعمل الجماعي، وإعداد المشروعات، إلى جانب تنمية القدرة على تطبيق المعرفة النظرية في مواقف عملية تحاكي بيئة العمل.</p>
+                <p>وتأتي هذه المبادرة في إطار توجه Skill Hub نحو دعم التطوير المستمر للطلاب، وتوفير فرص تعليمية تساعدهم على اكتشاف قدراتهم وتطوير مهاراتهم بما يتناسب مع اهتماماتهم وطموحاتهم المهنية.</p>
+                <p>وتؤكد المنصة أن ربط التعلم بالتطبيق العملي يمثل أحد المحاور الأساسية في تطوير تجربة الطلاب التعليمية، بما يساعدهم على بناء خبرات عملية تدعم خطواتهم المستقبلية.</p>
+                <div class="news-contact">
+                    <strong>للتواصل والاستفسارات الإعلامية:</strong><br>
+                    المركز الإعلامي – Skill Hub<br>
+                    البريد الإلكتروني: <a href="mailto:info@skillhub.com">info@skillhub.com</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <h2 class="section-title">آراء الطلاب 🎓</h2>
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card">
+                <span class="testimonial-stars">★★★★★</span>
+                <p class="testimonial-text">منصة Skill Hub ساعدتني أطور مهاراتي في التسويق والعلاقات العامة وأفهم إزاي أطبق اللي بتعلمه في مشروعات عملية بدل ما تكون مجرد معلومات نظرية.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">م</div>
+                    <div class="author-info">
+                        <span class="author-name">مريم أحمد</span>
+                        <span class="author-role">طالبة بكلية الإعلام</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <span class="testimonial-stars">★★★★★</span>
+                <p class="testimonial-text">المنصة ساعدتني في تطوير مهاراتي، بقيت أفهم أكتر متطلبات سوق العمل وعرفت إيه المهارات اللي محتاج أركز عليها علشان أكون مستعد للتدريب والشغل.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">ع</div>
+                    <div class="author-info">
+                        <span class="author-name">عمر محمد</span>
+                        <span class="author-role">طالب بكلية التجارة</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <span class="testimonial-stars">★★★★★</span>
+                <p class="testimonial-text">التجربة شجعتني أتعلم مهارات جديدة وأشتغل على تطوير نفسي باستمرار، وبقيت أكثر ثقة في قدراتي وفي المشروعات اللي بقدمها.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">س</div>
+                    <div class="author-info">
+                        <span class="author-name">سلمى محمود</span>
+                        <span class="author-role">طالبة بكلية الحاسبات والمعلومات</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <span class="testimonial-stars">★★★★★</span>
+                <p class="testimonial-text">الكورس ساعدني في تطوير مهاراتي في التسويق الرقمي، وساعدني أفكر بشكل أفضل في الحملات التسويقية وأفهم الجمهور المستهدف وأربط بين المحتوى والأهداف التسويقية.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">أ</div>
+                    <div class="author-info">
+                        <span class="author-name">أحمد مصطفى</span>
+                        <span class="author-role">Digital Marketing Specialist</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <span class="testimonial-stars">★★★★★</span>
+                <p class="testimonial-text">مهارات التواصل وكتابة المحتوى من أهم الحاجات اللي بحتاجها في شغلي، خدت كورس علاقات عامة في منصة Skill Hub وده ساعدني كتير في شغلي وساعدني أوصل الرسائل بشكل أكثر وضوحًا واحترافية.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">س</div>
+                    <div class="author-info">
+                        <span class="author-name">سارة محمد</span>
+                        <span class="author-role">Public Relations Specialist</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <span class="testimonial-stars">★★★★★</span>
+                <p class="testimonial-text">مجال السوشيال ميديا بيتطور باستمرار وعلشان كده لازم أطور مهاراتي بشكل مستمر، المنصة ساعدتني أطور أفكاري وأحسن طريقة إعداد المحتوى علشان يناسب الجمهور.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">م</div>
+                    <div class="author-info">
+                        <span class="author-name">منة علي</span>
+                        <span class="author-role">Social Media Specialist</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== Achievements ===== -->
+<section class="achievements" id="achievements">
+    <div class="container">
+        <h2 class="section-title">إنجازاتنا 🏅</h2>
+        <div class="achievement-box">
+            <span class="achievement-icon">🏆</span>
+            <div class="achievement-num">90%</div>
+            <div class="achievement-label">معدل رضا المشاركين</div>
+            <p class="achievement-desc">حققت منصة Skill Hub معدل رضا بلغ <strong>90%</strong> بين المشاركين في الكورسات والتدريبات، بما يعكس اهتمام المنصة بتقديم تجربة تعليمية تساعد المتعلمين على تطوير مهاراتهم وتحقيق أهدافهم الأكاديمية والمهنية.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Partnership ===== -->
+<section class="partnership" id="partnership">
+    <div class="container">
+        <h2 class="section-title">شراكتنا</h2>
+        <div class="partnership-box">
+            <div class="partners-logos">
+                <div class="partner-logo-item">
+                    <img src="IMG-20260930-WA0032.jpg" alt="Skill Hub" class="partner-logo">
+                    <span>Skill Hub</span>
+                </div>
+                <div class="partners-link">🤝</div>
+                <div class="partner-logo-item">
+                    <img src="IMG-20261002-WA0026.jpg" alt="جامعة عين شمس" class="partner-logo">
+                    <span>جامعة عين شمس</span>
+                </div>
+            </div>
+            <h3>شراكة مع <span>جامعة عين شمس</span></h3>
+            <p>تسعى منصة Skill Hub إلى تعزيز التعاون مع المؤسسات والشركات لتقديم فرص تدريبية للطلاب. وفي هذا الإطار تتضمن خطة التعاون المقترحة شراكة مع جامعة عين شمس لتقديم مجموعة من الكورسات والتدريبات التعليمية عبر منصة Skill Hub، بهدف إتاحة محتوى تعليمي متخصص يساعد المتعلمين على تطوير مهاراتهم واكتساب معارف عملية تدعم مسيرتهم الأكاديمية والمهنية، بما يسهم في تعزيز التكامل بين التعليم والتطبيق العملي وإعداد الطلاب لمتطلبات سوق العمل.</p>
+        </div>
+    </div>
+</section>
+
 <!-- ===== Goals ===== -->
 <section class="goals" id="goals">
     <div class="container">
@@ -745,31 +961,6 @@ body {
     </div>
 </section>
 
-<!-- ===== Partnership ===== -->
-<section class="partnership" id="partnership">
-    <div class="container">
-        <h2 class="section-title">شراكتنا</h2>
-        <div class="partnership-box">
-            
-            <!-- اللوجوهات جنب بعض -->
-            <div class="partners-logos">
-                <div class="partner-logo-item">
-                    <img src="IMG-20260930-WA0032.jpg" alt="Skill Hub" class="partner-logo">
-                    <span>Skill Hub</span>
-                </div>
-                <div class="partners-link">🤝</div>
-                <div class="partner-logo-item">
-                    <img src="IMG-20261002-WA0026.jpg" alt="جامعة عين شمس" class="partner-logo">
-                    <span>جامعة عين شمس</span>
-                </div>
-            </div>
-
-            <h3>شراكة مع <span>جامعة عين شمس</span></h3>
-            <p>نفخر في Skill Hub بشراكتنا مع جامعة عين شمس لتقديم مجموعة من الكورسات والتدريبات التعليمية عبر منصتنا، بهدف إتاحة محتوى تعليمي متخصص يساعد المتعلمين على تطوير مهاراتهم واكتساب معارف عملية تدعم مسيرتهم الأكاديمية والمهنية.</p>
-        </div>
-    </div>
-</section>
-
 <!-- ===== Contact ===== -->
 <section class="contact" id="contact">
     <div class="container">
@@ -799,9 +990,7 @@ body {
     <div class="container">
         <p>© 2025 <span>Skill Hub</span> - جميع الحقوق محفوظة 🎓</p>
     </div>
-</footer>
-
-<script>
+            </footer><script>
 // ===== Hero Slider =====
 const slides = document.querySelectorAll('.hero .slide');
 const dots = document.querySelectorAll('.dot');
