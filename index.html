@@ -57,11 +57,11 @@ body {
 .logo-text h1 span { color: var(--purple); }
 .logo-text small { font-size: 0.75rem; color: var(--gray); font-weight: 600; margin-top: 2px; }
 
-.nav { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.nav { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
 .nav a {
     text-decoration: none; color: var(--navy);
     font-weight: 700; transition: color 0.3s; position: relative;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
 }
 .nav a:hover { color: var(--purple); }
 .nav a::after {
@@ -211,6 +211,31 @@ body {
     transform: translateY(-2px);
 }
 
+/* ===== Goals ===== */
+.goals { padding: 80px 0; background: var(--bg-light); }
+.goals-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+.goal-card {
+    background: var(--white); border-radius: 18px;
+    padding: 30px 25px; box-shadow: 0 6px 20px rgba(26,58,107,0.1);
+    transition: all 0.3s; border-right: 5px solid var(--purple);
+    position: relative;
+}
+.goal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(108,76,224,0.2);
+    border-right-color: var(--navy);
+}
+.goal-num {
+    font-size: 2.5rem; font-weight: 900;
+    color: var(--purple); opacity: 0.4;
+    line-height: 1; margin-bottom: 10px;
+}
+.goal-card h4 { font-size: 1.2rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+.goal-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; }
+
 /* ===== Initiative ===== */
 .initiative { padding: 80px 0; background: var(--white); position: relative; overflow: hidden; }
 .initiative-intro {
@@ -335,7 +360,6 @@ body {
 }
 .news-contact a:hover { text-decoration: underline; }
 
-/* Partner Logos */
 .partners-logos {
     display: flex; align-items: center; justify-content: center;
     gap: 30px; margin-bottom: 30px; flex-wrap: wrap;
@@ -367,7 +391,6 @@ body {
     75% { transform: rotate(10deg); }
 }
 
-/* Testimonials Grid (inside media hub) */
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -418,7 +441,6 @@ body {
 .author-name { font-weight: 900; font-size: 1rem; color: var(--navy); }
 .author-role { font-size: 0.85rem; color: var(--purple); font-weight: 700; }
 
-/* Achievement Box */
 .achievement-box {
     background: var(--white);
     border-radius: 25px;
@@ -459,31 +481,6 @@ body {
     line-height: 2; max-width: 650px;
     margin: 0 auto;
 }
-
-/* ===== Goals ===== */
-.goals { padding: 80px 0; background: var(--bg-light); }
-.goals-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 25px;
-}
-.goal-card {
-    background: var(--white); border-radius: 18px;
-    padding: 30px 25px; box-shadow: 0 6px 20px rgba(26,58,107,0.1);
-    transition: all 0.3s; border-right: 5px solid var(--purple);
-    position: relative;
-}
-.goal-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(108,76,224,0.2);
-    border-right-color: var(--navy);
-}
-.goal-num {
-    font-size: 2.5rem; font-weight: 900;
-    color: var(--purple); opacity: 0.4;
-    line-height: 1; margin-bottom: 10px;
-}
-.goal-card h4 { font-size: 1.2rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
-.goal-card p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; }
 
 /* ===== Contact ===== */
 .contact {
@@ -576,9 +573,9 @@ body {
             <a href="#home">الرئيسية</a>
             <a href="#services">الكورسات</a>
             <a href="#about">من نحن</a>
+            <a href="#goals">أهدافنا</a>
             <a href="#initiative">المبادرة</a>
             <a href="#media">المركز الإعلامي</a>
-            <a href="#goals">أهدافنا</a>
             <a href="#contact">تواصل</a>
             <a href="#contact" class="cta-btn">ابدأ الآن 🚀</a>
         </nav>
@@ -693,6 +690,40 @@ body {
     </div>
 </section>
 
+<!-- ===== Goals ===== -->
+<section class="goals" id="goals">
+    <div class="container">
+        <h2 class="section-title">أهدافنا</h2>
+        <div class="goals-grid">
+            <div class="goal-card">
+                <div class="goal-num">01</div>
+                <h4>تطوير المهارات</h4>
+                <p>تقديم كورسات وتدريبات تساعد المتعلمين على اكتساب المهارات العملية والشخصية التي يحتاجونها في الدراسة وسوق العمل.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-num">02</div>
+                <h4>تحويل المعرفة إلى تطبيق</h4>
+                <p>ربط التعليم النظري بالتطبيق العملي من خلال المشاريع والأنشطة والتدريبات العملية.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-num">03</div>
+                <h4>دعم التطور الشخصي والمهني</h4>
+                <p>مساعدة كل متعلم على اكتشاف قدراته وتطوير مهاراته بما يتناسب مع اهتماماته وطموحاته المهنية.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-num">04</div>
+                <h4>توفير تعليم مرن ومتاح</h4>
+                <p>إتاحة محتوى تعليمي متنوع وبطريقة بسيطة ومرنة تناسب احتياجات مختلف المتعلمين.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-num">05</div>
+                <h4>بناء مجتمع تعليمي</h4>
+                <p>خلق بيئة تجمع المتعلمين بالمدربين والخبراء لتبادل المعرفة والخبرات وبناء علاقات مهنية.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ===== Initiative ===== -->
 <section class="initiative" id="initiative">
     <div class="container">
@@ -707,7 +738,7 @@ body {
         <div class="phases-grid">
             <div class="phase-card">
                 <div class="phase-img-wrap">
-                    <img src="phase-1.jpg" alt="المرحلة الأولى">
+                    <img src="IMG-20261014-WA0017.jpg" alt="المرحلة الأولى">
                     <div class="phase-num">1</div>
                 </div>
                 <div class="phase-body">
@@ -717,7 +748,7 @@ body {
             </div>
             <div class="phase-card">
                 <div class="phase-img-wrap">
-                    <img src="phase-2.jpg" alt="المرحلة الثانية">
+                    <img src="IMG-20261014-WA0020.jpg" alt="المرحلة الثانية">
                     <div class="phase-num">2</div>
                 </div>
                 <div class="phase-body">
@@ -727,7 +758,7 @@ body {
             </div>
             <div class="phase-card">
                 <div class="phase-img-wrap">
-                    <img src="phase-3.jpg" alt="المرحلة الثالثة">
+                    <img src="IMG-20261014-WA0019.jpg" alt="المرحلة الثالثة">
                     <div class="phase-num">3</div>
                 </div>
                 <div class="phase-body">
@@ -737,7 +768,7 @@ body {
             </div>
             <div class="phase-card">
                 <div class="phase-img-wrap">
-                    <img src="phase-4.jpg" alt="المرحلة الرابعة">
+                    <img src="IMG-20261014-WA0014.jpg" alt="المرحلة الرابعة">
                     <div class="phase-num">4</div>
                 </div>
                 <div class="phase-body">
@@ -905,40 +936,6 @@ body {
     </div>
 </section>
 
-<!-- ===== Goals ===== -->
-<section class="goals" id="goals">
-    <div class="container">
-        <h2 class="section-title">أهدافنا</h2>
-        <div class="goals-grid">
-            <div class="goal-card">
-                <div class="goal-num">01</div>
-                <h4>تطوير المهارات</h4>
-                <p>تقديم كورسات وتدريبات تساعد المتعلمين على اكتساب المهارات العملية والشخصية التي يحتاجونها في الدراسة وسوق العمل.</p>
-            </div>
-            <div class="goal-card">
-                <div class="goal-num">02</div>
-                <h4>تحويل المعرفة إلى تطبيق</h4>
-                <p>ربط التعليم النظري بالتطبيق العملي من خلال المشاريع والأنشطة والتدريبات العملية.</p>
-            </div>
-            <div class="goal-card">
-                <div class="goal-num">03</div>
-                <h4>دعم التطور الشخصي والمهني</h4>
-                <p>مساعدة كل متعلم على اكتشاف قدراته وتطوير مهاراته بما يتناسب مع اهتماماته وطموحاته المهنية.</p>
-            </div>
-            <div class="goal-card">
-                <div class="goal-num">04</div>
-                <h4>توفير تعليم مرن ومتاح</h4>
-                <p>إتاحة محتوى تعليمي متنوع وبطريقة بسيطة ومرنة تناسب احتياجات مختلف المتعلمين.</p>
-            </div>
-            <div class="goal-card">
-                <div class="goal-num">05</div>
-                <h4>بناء مجتمع تعليمي</h4>
-                <p>خلق بيئة تجمع المتعلمين بالمدربين والخبراء لتبادل المعرفة والخبرات وبناء علاقات مهنية.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- ===== Contact ===== -->
 <section class="contact" id="contact">
     <div class="container">
@@ -968,7 +965,7 @@ body {
     <div class="container">
         <p>© 2025 <span>Skill Hub</span> - جميع الحقوق محفوظة 🎓</p>
     </div>
-</footer><script>
+                        </footer><script>
 // ===== Hero Slider =====
 const slides = document.querySelectorAll('.hero .slide');
 const dots = document.querySelectorAll('.dot');
